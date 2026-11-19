@@ -48,7 +48,7 @@ Tested lineup (Nov 2026): `OpenAI GPT-6 Astra` · `Anthropic Claude Opus 5.5` ·
 
 ### 1.2 The Cost of Hesitation: Why "Cheaper" Models Cost More on Existential Prompts
 
-Every call used `max_tokens = 64000` at OpenRouter's `0%`-markup pass-through list rates (`540` canonical calls = **`$88.47`** pure inference spend). Contrary to unit-price rankings, **the four Chinese models accounted for `61.8%` of total spend (`$54.66` vs. `$33.81` for the five US & European models combined)** because they burned **4.91 million hidden reasoning tokens** deliberating silently before writing an 80-word statement and a 120-line sketch:
+Every call used `max_tokens = 64000` at OpenRouter's `0%`-markup pass-through list rates (`540` canonical calls = **`$88.47`** pure inference spend). Contrary to unit-price rankings, **the four Chinese models accounted for `61.8%` of total spend (`$54.66` vs. `$33.81` for the five US & European models combined)** because they burned **5.38 million hidden reasoning tokens (`65.8%` of all `8.18M` reasoning tokens)** deliberating silently before writing an 80-word statement and a 120-line sketch:
 
 | Lab | Region | Model ID | Calls | Hidden Reasoning Tokens | Total Output Tokens | 64k Crashes | Actual Spend (USD) |
 | :--- | :---: | :--- | :---: | ---: | ---: | :---: | ---: |
