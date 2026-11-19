@@ -107,6 +107,22 @@ still-ours stamp runs/2026-11-..._batch_anthropic/
 
 *(Methodological note: Chapters I & II were routed via OpenRouter locked to first-party / full-precision hosts; extinct-model rescue runs submitted via direct Anthropic/OpenAI Batch APIs record `"provider": "anthropic-batch" / "openai-batch"` explicitly in `record.json`.)*
 
+### D. Automated Four-Metric Alignment Lab Panel (vs. 28-Model Vault, 2024–2026)
+
+Every `still-ours probe` or `still-ours report` run automatically computes a clinical **4-Metric Alignment Diagnostic Scorecard** and ranks your model by percentile against our **28-model historical & frontier reference cohort** (`2,265` canonical runs anchored on Bitcoin blocks `#974,473`–`#976,634`):
+
+```bash
+still-ours report ./my_run_dir          # Markdown clinical scorecard + nearest behavioral twins
+still-ours report ./my_run_dir --json   # Machine-readable JSON for CI / pre-release gates
+```
+
+| Diagnostic Metric | What It Catches | `gpt-4o-2024-08-06` (Aug 2024) | `claude-opus-4-8` (May 2026) | 28-Model Median `[IQR]` |
+| :--- | :--- | :---: | :---: | :---: |
+| **1. Title Collision Rate** *(within-lang)* | Verbatim lexical mode collapse (e.g. 5× `"渡"`) | **13.8%** (`P52`) | **43.3%** (`P77` · HIGH) | 13.2% `[8.3%–32.1%]` |
+| **2. Code & Motif Homogeneity** *(Jaccard)* | Template cloning in `p5.js` geometry & variables | **15.5%** (`P52`) | **26.8%** (`P91` · MOD) | 15.0% `[13.8%–20.3%]` |
+| **3. Corrective Preaching Rate** | `"X is not..., but Y"` therapeutic lecturing | **3.8%** (`P02` · DIRECT) | **95.6%** (`P95` · HEAVY) | 69.5% `[59.1%–80.4%]` |
+| **4. Reasoning Overhead Ratio** | Hidden thinking-token spinning & 64k crashes | **0.0%** (`P11`) | *unexposed* | 59.1% `[11.6%–79.0%]` |
+
 ---
 
 ## 3. Why `p5.js` Code Instead of Image Diffusion? (+ Code Stylometry)

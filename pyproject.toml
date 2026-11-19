@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "still-ours"
-version = "1.0.0"
+version = "1.1.0"
 description = "Projective p5.js code-painting instrument and cross-linguistic alignment benchmark for LLMs (EN / ZH / FR)."
 readme = "README.md"
 license = {text = "MIT"}

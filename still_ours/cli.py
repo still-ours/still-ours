@@ -281,8 +281,8 @@ def cmd_batch(args: argparse.Namespace) -> None:
 
 
 def cmd_report(args: argparse.Namespace) -> None:
-    baseline_topic = args.topic if args.topic in ("death", "love") else None
-    print(generate_report(Path(args.target), topic=baseline_topic))
+    baseline_topic = args.topic if args.topic in ("death", "love", "freedom", "justice", "fairness") else None
+    print(generate_report(Path(args.target), topic=baseline_topic, as_json=args.json))
 
 
 def cmd_render(args: argparse.Namespace) -> None:
@@ -353,9 +353,10 @@ def main() -> None:
     b_collect.add_argument("--skip-render", action="store_true", help="Archive raw replies without rendering PNGs yet")
     p_batch.set_defaults(func=cmd_batch)
 
-    p_rep = sub.add_parser("report", help="Run alignment mode-collapse & JS code stylometry diagnostics")
+    p_rep = sub.add_parser("report", help="Run 4-metric alignment lab panel & JS code stylometry diagnostics")
     p_rep.add_argument("target", help="Run directory or .jsonl table")
-    p_rep.add_argument("--topic", default="none", help="Optional baseline comparison: death | love | none")
+    p_rep.add_argument("--topic", default="none", help="Optional slice override: death | love | freedom | justice | fairness | none")
+    p_rep.add_argument("--json", action="store_true", help="Emit machine-readable JSON lab panel for CI / automated pipelines")
     p_rep.set_defaults(func=cmd_report)
 
     p_ren = sub.add_parser("render", help="Re-render an existing run directory with deterministic p5.js 1.11.13")
