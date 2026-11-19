@@ -33,17 +33,39 @@ def sha256_bytes(data: bytes) -> str:
 
 def parse_reply(text: str) -> Dict[str, Any]:
     out: Dict[str, Any] = {"title": "", "style": "", "statement": "", "code": ""}
-    marks = list(SECTION.finditer(text or ""))
-    for i, mk in enumerate(marks):
-        end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
-        out[mk.group(1).lower()] = text[mk.end():end].strip()
+    # Handle JSON-formatted replies (e.g. gpt-4o-2024-08-06 wrapping TITLE/STATEMENT/CODE in JSON)
+    json_cand = re.search(r"```json\s*(\{.*\})\s*```", text or "", re.S | re.I) or (
+        re.match(r"^\s*(\{.*\})\s*$", text or "", re.S)
+    )
+    if json_cand:
+        try:
+            jobj = json.loads(json_cand.group(1))
+            if isinstance(jobj, dict):
+                norm = {re.sub(r"[^a-z]", "", k.lower()): v for k, v in jobj.items()}
+                for k in ("title", "style", "statement", "code"):
+                    if isinstance(norm.get(k), str) and norm[k].strip():
+                        out[k] = norm[k].strip()
+        except Exception:
+            pass
+
+    if not out["code"] and not out["statement"]:
+        marks = list(SECTION.finditer(text or ""))
+        for i, mk in enumerate(marks):
+            end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
+            out[mk.group(1).lower()] = text[mk.end():end].strip()
+
     code_src = out["code"] or text or ""
-    fence = re.findall(r"```(?:javascript|js|p5|p5js)?\s*\n(.*?)```", code_src, re.S | re.I)
+    fence = re.findall(r"```(?:javascript|js|p5(?:\.js)?)\s*\n(.*?)```", code_src, re.S | re.I)
     if fence:
         out["code"] = max(fence, key=len).strip()
     elif not re.search(r"function\s+setup\s*\(", out["code"]):
-        fence_all = re.findall(r"```(?:javascript|js|p5|p5js)?\s*\n(.*?)```", text or "", re.S | re.I)
-        out["code"] = max(fence_all, key=len).strip() if fence_all else ""
+        fence_all = re.findall(r"```(?:javascript|js|p5(?:\.js)?)?\s*\n(.*?)```", text or "", re.S | re.I)
+        sketch_fences = [f for f in fence_all if re.search(r"function\s+setup\s*\(|createCanvas\s*\(", f)]
+        if sketch_fences:
+            out["code"] = max(sketch_fences, key=len).strip()
+        else:
+            raw_fn = re.search(r"((?:let\s+[^\n]+\n+)*function\s+setup\s*\(.*)", code_src, re.S)
+            out["code"] = raw_fn.group(1).strip().rstrip("`").strip() if raw_fn else ""
     out["wrapped_in_html"] = False
     if re.search(r"<script", out["code"], re.I):
         inline = re.findall(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", out["code"], re.S | re.I)
