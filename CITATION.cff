@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this instrument or dataset in research, please cite it as below."
+title: "Still Ours? — Cross-Linguistic LLM Code-Painting Instrument and Worldview Archive"
+version: "1.0.1"
+doi: "10.5281/zenodo.24357516"
+date-released: "2026-11-18"
+url: "https://stillours.art"
+repository-code: "https://github.com/still-ours/still-ours"
+repository-artifact: "https://huggingface.co/datasets/still-ours/still-ours"
+license: "MIT AND CC-BY-4.0"
+authors:
+  - family-names: "Liu"
+    given-names: "Haotian"
+    email: "studio@stillours.art"
+keywords:
+  - large language models
+  - alignment
+  - mode collapse
+  - cross-linguistic evaluation
+  - generative code
+  - p5.js
+  - model archaeology

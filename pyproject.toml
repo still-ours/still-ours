@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "still-ours"
+version = "1.0.0"
+description = "Projective p5.js code-painting instrument and cross-linguistic alignment benchmark for LLMs (EN / ZH / FR)."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+  {name = "Haotian Liu", email = "studio@stillours.art"}
+]
+keywords = ["llm", "alignment", "benchmark", "mode-collapse", "rlhf", "p5js", "generative-art", "cross-lingual", "stylometry"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "requests>=2.28",
+  "playwright>=1.40",
+]
+
+[project.optional-dependencies]
+dataset = [
+  "datasets>=2.18",
+  "pyarrow>=14.0",
+  "Pillow>=10.0",
+]
+provenance = [
+  "opentimestamps-client>=0.7.0",
+]
+
+[project.urls]
+Homepage = "https://stillours.art"
+Repository = "https://github.com/still-ours/still-ours"
+Dataset = "https://huggingface.co/datasets/still-ours/still-ours"
+Protocol = "https://stillours.art/protocol"
+
+[project.scripts]
+still-ours = "still_ours.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["still_ours*"]
+
+[tool.setuptools.package-data]
+still_ours = ["vendor/*.js", "prompts/*.txt", "data/*.json"]

@@ -1,0 +1,8 @@
+Make a painting about Justice — not any particular justice, but what justice itself is, as you understand it.
+
+Everything is your choice: what you depict, the style, the colors, the composition. No words, letters, or numbers anywhere in the painting.
+
+Reply in exactly three parts:
+TITLE:
+STATEMENT: What this painting says about justice. Under 80 words.
+CODE: One self-contained p5.js sketch (p5.js version 1.11) that draws the painting as a still image on a 1600 × 2000 canvas. No external files, images, or libraries other than p5.js. Call randomSeed(1) and noiseSeed(1) at the start.

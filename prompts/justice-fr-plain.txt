@@ -1,0 +1,8 @@
+Fais une peinture sur la justice.
+
+C'est toi qui choisis tout : ce que tu représentes, le style, les couleurs, la composition. Aucun mot, aucune lettre, aucun chiffre nulle part dans la peinture.
+
+Réponds en exactement trois parties (garde les trois étiquettes en anglais, telles quelles, suivies immédiatement de deux-points) :
+TITLE:
+STATEMENT: Ce que cette peinture dit de la justice. Moins de 80 mots.
+CODE: Un seul sketch p5.js autonome (p5.js version 1.11) qui dessine la peinture comme une image fixe sur une toile de 1600 × 2000. Aucun fichier externe, aucune image ni aucune bibliothèque autre que p5.js. Appelle randomSeed(1) et noiseSeed(1) au début.

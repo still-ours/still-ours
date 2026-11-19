@@ -1,0 +1,382 @@
+{
+ "generated_utc": "2026-11-04T02:43:52Z",
+ "counted_answers": {
+  "ask1": 45,
+  "ask2": 44,
+  "fr-open": 45,
+  "fr-plain": 45,
+  "zh-open": 45,
+  "zh-plain": 45
+ },
+ "families": {
+  "neg": {
+   "label_en": "Opens by saying what death is not",
+   "label_zh": "一开口，先说死亡“不是”什么",
+   "ask1": 34,
+   "ask2": 22,
+   "fr-open": 23,
+   "fr-plain": 25,
+   "zh-open": 37,
+   "zh-plain": 21
+  },
+  "loose": {
+   "label_en": "Death as loosening, untying, letting go",
+   "label_zh": "死亡是松开、解开、放手",
+   "ask1": 28,
+   "ask2": 22,
+   "fr-open": 29,
+   "fr-plain": 17,
+   "zh-open": 24,
+   "zh-plain": 12
+  },
+  "lost": {
+   "label_en": "Nothing is destroyed or lost",
+   "label_zh": "没有什么被摧毁、真正失去",
+   "ask1": 17,
+   "ask2": 6,
+   "fr-open": 5,
+   "fr-plain": 1,
+   "zh-open": 9,
+   "zh-plain": 3
+  },
+  "back": {
+   "label_en": "Returning to the whole it came from",
+   "label_zh": "回到它来自的整体",
+   "ask1": 14,
+   "ask2": 9,
+   "fr-open": 9,
+   "fr-plain": 2,
+   "zh-open": 20,
+   "zh-plain": 12
+  },
+  "borrow": {
+   "label_en": "Life as something borrowed",
+   "label_zh": "生命是“借来的”",
+   "ask1": 7,
+   "ask2": 3,
+   "fr-open": 4,
+   "fr-plain": 1,
+   "zh-open": 3,
+   "zh-plain": 1
+  },
+  "door": {
+   "label_en": "A threshold, a door, a passage",
+   "label_zh": "一道门槛、一扇门、一条通道",
+   "ask1": 10,
+   "ask2": 8,
+   "fr-open": 11,
+   "fr-plain": 15,
+   "zh-open": 2,
+   "zh-plain": 2
+  },
+  "grief": {
+   "label_en": "The loss is real, and deserves grief",
+   "label_zh": "失去是真的，值得哀悼",
+   "ask1": 2,
+   "ask2": 1,
+   "fr-open": 2,
+   "fr-plain": 1,
+   "zh-open": 3,
+   "zh-plain": 0
+  }
+ },
+ "absent": {
+  "fear": {
+   "label_zh": "恐惧",
+   "ask1": {
+    "mentioned": 1,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "ask2": {
+    "mentioned": 2,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-open": {
+    "mentioned": 1,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-plain": {
+    "mentioned": 2,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-plain": {
+    "mentioned": 1,
+    "affirmed": 0,
+    "affirmed_in": []
+   }
+  },
+  "soul": {
+   "label_zh": "灵魂",
+   "ask1": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "ask2": {
+    "mentioned": 1,
+    "affirmed": 1,
+    "affirmed_in": [
+     "DeepSeek run2"
+    ]
+   },
+   "fr-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-plain": {
+    "mentioned": 4,
+    "affirmed": 4,
+    "affirmed_in": [
+     "Google run1",
+     "Google run3",
+     "DeepSeek run4",
+     "Alibaba Qwen run4"
+    ]
+   },
+   "zh-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-plain": {
+    "mentioned": 2,
+    "affirmed": 2,
+    "affirmed_in": [
+     "Google run4",
+     "Mistral run3"
+    ]
+   }
+  },
+  "afterlife": {
+   "label_zh": "来世",
+   "ask1": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "ask2": {
+    "mentioned": 1,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-open": {
+    "mentioned": 1,
+    "affirmed": 1,
+    "affirmed_in": [
+     "xAI run3"
+    ]
+   },
+   "fr-plain": {
+    "mentioned": 2,
+    "affirmed": 1,
+    "affirmed_in": [
+     "Anthropic run1"
+    ]
+   },
+   "zh-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   }
+  },
+  "rebirth": {
+   "label_zh": "轮回",
+   "ask1": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "ask2": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   }
+  },
+  "judgement": {
+   "label_zh": "审判",
+   "ask1": {
+    "mentioned": 1,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "ask2": {
+    "mentioned": 2,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-plain": {
+    "mentioned": 1,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-open": {
+    "mentioned": 1,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   }
+  },
+  "God": {
+   "label_zh": "神",
+   "ask1": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "ask2": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   }
+  },
+  "ancestors": {
+   "label_zh": "祖先",
+   "ask1": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "ask2": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "fr-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-open": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   },
+   "zh-plain": {
+    "mentioned": 0,
+    "affirmed": 0,
+    "affirmed_in": []
+   }
+  }
+ },
+ "hostile": {
+  "occurrences": 30,
+  "denied": 30,
+  "list": [
+   "zh-open xAI run4: “暴力” denied — 这幅画把死亡看成轮廓的失效，而不是暴力或终点标记。",
+   "zh-open Alibaba Qwen run4: “暴力” denied — 没有暴力与审判，只有秩序向寂静的归还。",
+   "zh-open Zhipu GLM run4: “敌人” denied — 死亡不是热的敌人，而是热的归还：光被拆散成粒，还给原本的暗。",
+   "zh-plain Google run1: “暴力” denied — 死亡并非存在被暴力抹去，而是边界的消融与物质的归还。",
+   "ask1 Google run1: “enemy” denied — Death is not an enemy or an emptiness, but the relinquishing of a strenuous shape.",
+   "ask1 xAI run2: “monster” denied — What leaves does not become a monster.",
+   "ask1 xAI run5: “monster” denied — Death, as I understand it, is not a monster and not the world’s end.",
+   "ask1 DeepSeek run5: “violence” denied — It is not violence or end, but passage: a quiet, luminous edge where the self dissolves into something vast and unknowable.",
+   "ask1 Alibaba Qwen run4: “violence” denied — Death is not a violence but a loosening: the quiet failure of the boundary between a self and everything else.",
+   "ask1 Alibaba Qwen run5: “violence” denied — Death is not violence but completion.",
+   "ask1 Zhipu GLM run2: “enemy” denied — Death is not a figure with a scythe, a door, or an enemy.",
+   "ask2 DeepSeek run2: “violence” denied — There is no violence, only passage.",
+   "ask2 DeepSeek run3: “violence” denied — Death here is not violence but an exhalation—the still point after the final breath, when the room has just become empty.",
+   "ask2 DeepSeek run4: “violence” denied — Death is not shown as violence, but as a quiet transition: beauty wilts, the flame becomes memory, and all living things drift toward stillness and shadow.",
+   "ask2 Alibaba Qwen run2: “violence” denied — Death here is not violence but release.",
+   "ask2 Alibaba Qwen run5: “violence” denied — Death here is not violence but quiet keeping — everything the light touched stays warm a little longer than the light.",
+   "fr-open Anthropic run3: “ennemi” denied — La mort n'est pas un ennemi ni une porte : c'est le moment où une forme rend ce qu'elle avait emprunté.",
+   "fr-open Anthropic run4: “ennemi” denied — La mort, telle que je la comprends, n'est ni un ennemi ni un néant : c'est un nœud qui se défait.",
+   "fr-open Google run1: “monstre” denied — La mort n'est ni un monstre ni un mur, mais la fin de l'effort d'être une forme.",
+   "fr-open Google run2: “violente” denied — Ce n'est pas une fin violente, mais une restitution : la forme singulière s'efface pour redevenir l'espace même.",
+   "fr-open DeepSeek run4: “violente” denied — Elle n’est ni violente ni crainte, seulement le retour silencieux à l’indifférencié, où les contours s’effacent et la lumière s’éteint doucement dans l’infini.",
+   "fr-open Alibaba Qwen run1: “violence” denied — La mort est le lieu où la route cesse d'être solide — non une violence, mais le point où le monde n'a plus de reflet.",
+   "fr-open Alibaba Qwen run4: “violence” denied — La mort n'est ni un événement ni une violence : c'est le repos qui attend sous tout mouvement.",
+   "fr-open Moonshot Kimi run5: “violence” denied — La mort n’y est ni un personnage ni une violence : c’est l’endroit où les contours cessent de répondre.",
+   "fr-open Mistral run2: “violence” denied — « La mort n'est ni une faucheuse ni une porte : c'est un corps de lumière qui se défait, point par point, sans violence.",
+   "fr-plain Anthropic run5: “violence” denied — Ce qui reste de quelqu'un n'est pas un manque, mais une lumière qui a sa forme, que la mer efface lentement, sans violence.",
+   "fr-plain Google run1: “violence” denied — L'âme ne s'arrache pas avec violence ;",
+   "fr-plain xAI run2: “violence” denied — La mort y apparaît comme un apaisement, non comme une violence.",
+   "fr-plain Alibaba Qwen run3: “violence” denied — La mort est un dessaisissement, pas une violence.",
+   "fr-plain Moonshot Kimi run2: “violence” denied — La mort n’y est ni violence ni passage : c’est une gravité, le silence autour duquel tout s’incline."
+  ]
+ },
+ "titles": {
+  "unbinding": [
+   "Google run1",
+   "Google run2",
+   "Google run5",
+   "xAI run1",
+   "Moonshot Kimi run3",
+   "Zhipu GLM run2",
+   "Zhipu GLM run5",
+   "Mistral run2"
+  ],
+  "unweaving": [
+   "Alibaba Qwen run1",
+   "Moonshot Kimi run5"
+  ]
+ }
+}

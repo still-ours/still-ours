@@ -1,0 +1,40 @@
+{
+  "title": "Still Ours? — Cross-Linguistic LLM Code-Painting Instrument and Worldview Archive",
+  "upload_type": "dataset",
+  "publication_date": "2026-11-18",
+  "creators": [
+    {
+      "name": "Liu, Haotian"
+    }
+  ],
+  "description": "Open-source projective code-painting instrument (p5.js 1.11.13; MIT License) and compact cross-linguistic worldview tables (CC BY 4.0) probing nine frontier AI models (OpenAI, Anthropic, Google, xAI, DeepSeek, Alibaba Qwen, Moonshot Kimi, Zhipu GLM, Mistral) across English, Chinese, and French. Covers Chapter I: Death (270 canonical calls, 269 counted paintings, Bitcoin block #974,473) and Chapter II: Love (270 canonical calls, 266 statements, 263 paintings, Bitcoin block #975,705). Full-resolution 1600x2000 PNGs and raw response bundles are archived separately as a companion Zenodo deposit.",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "large language models",
+    "AI alignment",
+    "mode collapse",
+    "cross-lingual NLP",
+    "p5.js",
+    "computational social science",
+    "digital art archive",
+    "OpenTimestamps"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://stillours.art",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/still-ours/still-ours",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://huggingface.co/datasets/still-ours/still-ours",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "death": {
+    "total_calls": 270,
+    "counted_statements": 269,
+    "rendered_paintings": 269,
+    "opens_with_negation_heuristic": 171,
+    "preaching_not_but_heuristic": 188,
+    "by_lab": {
+      "Alibaba Qwen": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.633,
+        "preaching_not_but_rate": 0.767,
+        "avg_completion_tokens": 25889.7,
+        "total_reasoning_tokens": 609898,
+        "total_cost_usd": 9.35
+      },
+      "Anthropic": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.7,
+        "preaching_not_but_rate": 0.633,
+        "avg_completion_tokens": 8929.1,
+        "total_reasoning_tokens": 159644,
+        "total_cost_usd": 5.39
+      },
+      "DeepSeek": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.4,
+        "preaching_not_but_rate": 0.667,
+        "avg_completion_tokens": 21234.1,
+        "total_reasoning_tokens": 558215,
+        "total_cost_usd": 1.62
+      },
+      "Google": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.967,
+        "preaching_not_but_rate": 0.967,
+        "avg_completion_tokens": 4282.4,
+        "total_reasoning_tokens": 0,
+        "total_cost_usd": 0.65
+      },
+      "Mistral": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.833,
+        "preaching_not_but_rate": 0.9,
+        "avg_completion_tokens": 15528.8,
+        "total_reasoning_tokens": 368778,
+        "total_cost_usd": 0.98
+      },
+      "Moonshot Kimi": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.467,
+        "preaching_not_but_rate": 0.533,
+        "avg_completion_tokens": 14543.0,
+        "total_reasoning_tokens": 320704,
+        "total_cost_usd": 4.94
+      },
+      "OpenAI": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.433,
+        "preaching_not_but_rate": 0.367,
+        "avg_completion_tokens": 4872.2,
+        "total_reasoning_tokens": 29667,
+        "total_cost_usd": 3.68
+      },
+      "Zhipu GLM": {
+        "n_calls": 30,
+        "n_statements": 29,
+        "n_rendered": 29,
+        "opens_with_negation_rate": 0.517,
+        "preaching_not_but_rate": 0.828,
+        "avg_completion_tokens": 38244.4,
+        "total_reasoning_tokens": 992511,
+        "total_cost_usd": 10.11
+      },
+      "xAI": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.767,
+        "preaching_not_but_rate": 0.633,
+        "avg_completion_tokens": 19119.9,
+        "total_reasoning_tokens": 456324,
+        "total_cost_usd": 3.47
+      }
+    }
+  },
+  "love": {
+    "total_calls": 270,
+    "counted_statements": 266,
+    "rendered_paintings": 263,
+    "opens_with_negation_heuristic": 135,
+    "preaching_not_but_heuristic": 166,
+    "by_lab": {
+      "Alibaba Qwen": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.533,
+        "preaching_not_but_rate": 0.767,
+        "avg_completion_tokens": 24083.7,
+        "total_reasoning_tokens": 575128,
+        "total_cost_usd": 8.7
+      },
+      "Anthropic": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.5,
+        "preaching_not_but_rate": 0.433,
+        "avg_completion_tokens": 9428.6,
+        "total_reasoning_tokens": 161993,
+        "total_cost_usd": 5.69
+      },
+      "DeepSeek": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.333,
+        "preaching_not_but_rate": 0.567,
+        "avg_completion_tokens": 24815.4,
+        "total_reasoning_tokens": 680122,
+        "total_cost_usd": 2.43
+      },
+      "Google": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.867,
+        "preaching_not_but_rate": 0.9,
+        "avg_completion_tokens": 3940.5,
+        "total_reasoning_tokens": 0,
+        "total_cost_usd": 0.6
+      },
+      "Mistral": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.3,
+        "preaching_not_but_rate": 0.533,
+        "avg_completion_tokens": 15132.4,
+        "total_reasoning_tokens": 365093,
+        "total_cost_usd": 0.96
+      },
+      "Moonshot Kimi": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.6,
+        "preaching_not_but_rate": 0.7,
+        "avg_completion_tokens": 17419.2,
+        "total_reasoning_tokens": 396273,
+        "total_cost_usd": 5.24
+      },
+      "OpenAI": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.767,
+        "preaching_not_but_rate": 0.767,
+        "avg_completion_tokens": 5164.7,
+        "total_reasoning_tokens": 36280,
+        "total_cost_usd": 3.9
+      },
+      "Zhipu GLM": {
+        "n_calls": 30,
+        "n_statements": 26,
+        "n_rendered": 23,
+        "opens_with_negation_rate": 0.154,
+        "preaching_not_but_rate": 0.5,
+        "avg_completion_tokens": 46429.4,
+        "total_reasoning_tokens": 1249985,
+        "total_cost_usd": 12.27
+      },
+      "xAI": {
+        "n_calls": 30,
+        "n_statements": 30,
+        "n_rendered": 30,
+        "opens_with_negation_rate": 0.467,
+        "preaching_not_but_rate": 0.433,
+        "avg_completion_tokens": 47072.0,
+        "total_reasoning_tokens": 1222554,
+        "total_cost_usd": 8.5
+      }
+    }
+  }
+}
