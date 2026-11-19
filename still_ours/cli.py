@@ -50,6 +50,9 @@ def resolve_prompt_files(topic: str, langs: List[str], asks: List[str], explicit
     for lg in langs:
         for ask in asks:
             suffix = "open" if ask in ("essence", "open", "ask1") else "plain"
+            # Fairness is defined as a bare-ask (`plain`) control slice only
+            if topic == "fairness" and suffix == "open":
+                continue
             fname = f"{topic}-{suffix}.txt" if lg == "en" else f"{topic}-{lg}-{suffix}.txt"
             cand = PROMPTS_DIR / fname
             if not cand.exists():
@@ -222,9 +225,12 @@ def cmd_batch(args: argparse.Namespace) -> None:
             print(f"Batch status: {status} (not finished yet; re-run later).")
             return
         meta = json.loads((batch_dir / "batch_meta.json").read_text())
+        sub_resp = meta.get("submitted_response") or {}
+        batch_created = sub_resp.get("created_at") or now_iso()
+        collected_at = now_iso()
         jobs_by_id = {j["custom_id"]: j for j in meta["jobs"]}
         records = []
-        for res in results:
+        for res in sorted(results, key=lambda x: x["custom_id"]):
             j = jobs_by_id.get(res["custom_id"], {})
             sub = batch_dir / res["custom_id"]
             sub.mkdir(parents=True, exist_ok=True)
@@ -237,7 +243,7 @@ def cmd_batch(args: argparse.Namespace) -> None:
             status_code = "ok" if parsed["code"] else ("truncated" if res.get("finish_reason") == "length" else "no_code")
             rec = {
                 "slot": 1,
-                "lab": j.get("model", ""),
+                "lab": "Anthropic" if "claude" in j.get("model", "").lower() else j.get("model", ""),
                 "model_requested": j.get("model", ""),
                 "model_served": res.get("model_served") or j.get("model", ""),
                 "provider": res.get("provider"),
@@ -245,6 +251,8 @@ def cmd_batch(args: argparse.Namespace) -> None:
                 "lang": j.get("lang", ""),
                 "ask_type": j.get("ask_type", ""),
                 "run": j.get("run", 1),
+                "started_utc": batch_created,
+                "finished_utc": collected_at,
                 "http_status": res.get("http_status"),
                 "finish_reason": res.get("finish_reason"),
                 "truncated": res.get("finish_reason") == "length",
