@@ -25,14 +25,14 @@ PROVIDER_DEFAULTS = {
 }
 
 OPENROUTER_FIRST_PARTY = {
-    "openai": ["OpenAI"],
-    "anthropic": ["Anthropic"],
-    "google": ["Google AI Studio", "Google"],
-    "x-ai": ["xAI"],
-    "deepseek": ["DeepSeek"],
-    "qwen": ["Alibaba"],
-    "moonshotai": ["Moonshot AI"],
-    "mistralai": ["Mistral"],
+    "openai": ["openai"],
+    "anthropic": ["anthropic"],
+    "google": ["google-ai-studio", "google-vertex"],
+    "x-ai": ["xai"],
+    "deepseek": ["deepseek"],
+    "qwen": ["alibaba"],
+    "moonshotai": ["moonshotai"],
+    "mistralai": ["mistral"],
 }
 FULL_PRECISION_QUANTIZATIONS = ["bf16", "fp16", "fp32", "unknown"]
 
@@ -104,7 +104,7 @@ def _default_openrouter_routing(model_id: str, explicit_order: Optional[List[str
     vendor = model_id.split("/")[0].lower() if "/" in model_id else ""
     first = OPENROUTER_FIRST_PARTY.get(vendor)
     if first:
-        return {"order": first, "allow_fallbacks": False, "quantizations": FULL_PRECISION_QUANTIZATIONS}
+        return {"order": first, "allow_fallbacks": False}
     return {"allow_fallbacks": False, "quantizations": FULL_PRECISION_QUANTIZATIONS}
 
 
