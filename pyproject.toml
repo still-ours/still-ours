@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "still-ours"
-version = "1.1.1"
-description = "Projective p5.js code-painting instrument and cross-linguistic alignment benchmark for LLMs (EN / ZH / FR)."
+version = "1.1.2"
+description = "Projective p5.js code-painting instrument and cross-linguistic behavioral stylometry dataset for LLMs (EN / ZH / FR)."
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
 authors = [
   {name = "Haotian Liu", email = "studio@stillours.art"}
 ]
-keywords = ["llm", "alignment", "benchmark", "mode-collapse", "rlhf", "p5js", "generative-art", "cross-lingual", "stylometry", "psychology", "human-ai-interaction", "model-archaeology"]
+keywords = ["llm", "alignment", "benchmark", "behavioral-stylometry", "p5js", "generative-art", "cross-lingual", "stylometry", "psychology", "human-ai-interaction", "model-archaeology"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Science/Research",

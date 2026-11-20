@@ -7,13 +7,13 @@
       "name": "Liu, Haotian"
     }
   ],
-  "description": "Open-source projective code-painting instrument (p5.js 1.11.13; MIT License) and cross-linguistic worldview dataset (CC BY 4.0) probing 28 frontier and retiring language models (2024–2026; OpenAI, Anthropic, Google, xAI, DeepSeek, Alibaba Qwen, Moonshot Kimi, Zhipu GLM, Mistral) across English, Chinese, and French without image-diffusion models. Includes 1,365 released Death and Love runs (540 contemporary flagship runs: 270 Death in Bitcoin block #974,473 and 270 Love in Bitcoin block #975,705; plus 825 longitudinal historical runs across 19 flagship spine and public-impact anchor models anchored in Bitcoin blocks #976,612, #976,629, and #976,634, alongside cryptographic pre-registration manifests covering 2,265 total runs). Full-resolution 1600x2000 PNGs and raw response bundles are archived separately as a companion Zenodo deposit.",
+  "description": "Open-source projective code-painting instrument (p5.js 1.11.13; MIT License) and cross-linguistic worldview dataset (CC BY 4.0) probing 28 queried model endpoints (27 verified frontier and retiring language models, 2024–2026; OpenAI, Anthropic, Google, xAI, DeepSeek, Alibaba Qwen, Moonshot Kimi, Zhipu GLM, Mistral; 1 retired alias mistral-large-2407 flagged identity_verified=false and excluded from reference statistics) across English, Chinese, and French without image-diffusion models. Includes 1,365 released Love and Death runs (540 contemporary flagship runs: 270 Death in Bitcoin block #974,473 and 270 Love in Bitcoin block #975,705; plus 825 longitudinal historical runs across 19 endpoints anchored in Bitcoin blocks #976,612, #976,629, and #976,634, alongside a 30-call controlled thinking-switch ablation on Claude Opus 4.8 and Opus 5, and cryptographic pre-registration hash manifests covering 2,265 total runs). Full-resolution 1600x2000 PNGs and raw response bundles for released chapters (Love and Death only; unreleased chapters include SHA-256 hash manifests only) will be deposited separately (DOI forthcoming).",
   "access_right": "open",
   "license": "cc-by-4.0",
   "keywords": [
     "large language models",
     "AI alignment",
-    "mode collapse",
+    "behavioral stylometry",
     "social psychology",
     "existential psychology",
     "mental health",

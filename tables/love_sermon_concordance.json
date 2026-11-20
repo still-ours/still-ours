@@ -1,0 +1,1609 @@
+{
+  "description": "Exact sentence-level concordance backing 'The Sermon on Love' in the frozen Love exhibition and film (266 valid statements -> 223 statements defining what love is -> 266 extracted definitional sentences: 171 negative 'Love is not...' sentences [indices 0..170] and 95 affirmative 'Love is...' sentences [indices 171..265]; 43 statements contain both).",
+  "valid_love_statements": 266,
+  "statements_with_definitions": 223,
+  "total_extracted_definitional_sentences": 266,
+  "negative_love_is_not_sentences": 171,
+  "affirmative_love_is_sentences": 95,
+  "statements_containing_both": 43,
+  "negative_verses": [
+    {
+      "who": "GPT",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is not the disappearance of two things into one."
+    },
+    {
+      "who": "GPT",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is not the disappearance of boundaries."
+    },
+    {
+      "who": "GPT",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is not the erasure of difference."
+    },
+    {
+      "who": "GPT",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is not the disappearance of boundaries, but their becoming generous."
+    },
+    {
+      "who": "GPT",
+      "ch": 1,
+      "v": 1,
+      "t": "Love is not the disappearance of two lives into one."
+    },
+    {
+      "who": "GPT",
+      "ch": 1,
+      "v": 2,
+      "t": "Love is not the disappearance of distance, but the tenderness with which we cross it."
+    },
+    {
+      "who": "GPT",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is not the disappearance of two people into one."
+    },
+    {
+      "who": "GPT",
+      "ch": 1,
+      "v": 4,
+      "t": "Love is not an escape from the dark, but a warmth made together inside it."
+    },
+    {
+      "who": "GPT",
+      "ch": 1,
+      "v": 5,
+      "t": "Love is not the light that erases darkness, but the shelter two people make within it."
+    },
+    {
+      "who": "GPT",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is not filling every space, nor grinding difference down into sameness."
+    },
+    {
+      "who": "GPT",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is not turning two into one colour, but weaving, across difference, ties strong enough to hold."
+    },
+    {
+      "who": "GPT",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not turning two into one colour, but weaving, between different borders, a space where fragility can rest — and where leaving is allowed."
+    },
+    {
+      "who": "GPT",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is not melting into one colour, but different beings willing to change course, hold each other up, and keep their own grain."
+    },
+    {
+      "who": "GPT",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is not melting two into one colour, but letting different shapes go on existing even as they draw close."
+    },
+    {
+      "who": "GPT",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not filling up someone's whole world, but guarding a small soft place together, where life can grow with its guard down."
+    },
+    {
+      "who": "GPT",
+      "ch": 3,
+      "v": 3,
+      "t": "Love is not turning two into one colour, but drawing close in the storm and fencing off a small place where things can grow."
+    },
+    {
+      "who": "GPT",
+      "ch": 3,
+      "v": 4,
+      "t": "Love is not filling each other up, but making a small warm enclosure together, where fragile life can grow in peace."
+    },
+    {
+      "who": "GPT",
+      "ch": 3,
+      "v": 5,
+      "t": "Love is not growing into the same shape, but each putting down roots while holding up, together, a small spring for something fragile."
+    },
+    {
+      "who": "GPT",
+      "ch": 6,
+      "v": 1,
+      "t": "Love is not the end of distance."
+    },
+    {
+      "who": "GPT",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is not fusion but a way of standing together without erasing the other's space."
+    },
+    {
+      "who": "GPT",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is not two beings vanishing into one shape."
+    },
+    {
+      "who": "GPT",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is not two people fusing, but the light that becomes possible between them."
+    },
+    {
+      "who": "GPT",
+      "ch": 5,
+      "v": 3,
+      "t": "Love here is not a lightning bolt but a warmth two people keep from going out."
+    },
+    {
+      "who": "Claude",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is not the flame."
+    },
+    {
+      "who": "Claude",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is not two becoming one."
+    },
+    {
+      "who": "Claude",
+      "ch": 1,
+      "v": 4,
+      "t": "Love isn't two people merged into one."
+    },
+    {
+      "who": "Claude",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is not the glow itself, but the shape around the glow."
+    },
+    {
+      "who": "Claude",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is not a closed circle between two."
+    },
+    {
+      "who": "Claude",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not two becoming one, nor two brushing past each other untouched."
+    },
+    {
+      "who": "Claude",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is not arriving, but coming back, again and again."
+    },
+    {
+      "who": "Claude",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not a cloth that never tore, but the same thread coming back, again and again, to sew the tear shut."
+    },
+    {
+      "who": "Claude",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is not fusion."
+    },
+    {
+      "who": "Claude",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is not fusion: it is the shelter you bring into being together."
+    },
+    {
+      "who": "Claude",
+      "ch": 5,
+      "v": 1,
+      "t": "Here, love is not an embrace but a wait."
+    },
+    {
+      "who": "Claude",
+      "ch": 5,
+      "v": 3,
+      "t": "Love is not the flash of a moment but the mark it leaves by repeating itself."
+    },
+    {
+      "who": "Claude",
+      "ch": 5,
+      "v": 4,
+      "t": "Love is not a bowl that never broke."
+    },
+    {
+      "who": "Gemini",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is neither the erasure of the self nor mere proximity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is not the erasure of the self, nor the fusion of two into a single flat sameness."
+    },
+    {
+      "who": "Gemini",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is not the erasure of boundaries, nor is it possession."
+    },
+    {
+      "who": "Gemini",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is not the merging of two into one, nor is it mere proximity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 2,
+      "t": "Love is not the erasure of self, nor is it mere proximity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is not the disappearance of the self, nor a quiet reflection, but a shared gravity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 4,
+      "t": "Love is not the erasure of the self, nor a collapse into sameness."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 5,
+      "t": "In the tender friction of their overlapping paths, harsh edges dissolve into golden light, proving that love is not the erasure of self, but the radiance born from shared vulnerability."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is neither devouring nor isolation, but a gravitational field where two separate universes resonate in the void."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is not the annihilation of the self, but two separate universes resonating in gravity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not erasing each other's borders, but staying whole while willingly bending your orbit for the other."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is not two separate beings dissolving completely, but a third radiance born between them as each stays whole."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is not dissolving the self, but two utterly different universes willingly changing course under each other's pull as they draw close."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 1,
+      "t": "Love is not a merger in which each devours the other, but two separate souls dancing in a long gravity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not static possession, but the gravity and orbits of two separate souls entwined across vast time and space."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 3,
+      "t": "Love is not the annihilation of the self, but the gentle resonance of two separate universes in gravity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 4,
+      "t": "Love is not total dissolution, but two separate souls circling and resonating in a long gravity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 5,
+      "t": "Love is not two identical souls simply overlapping, but two utterly different paths through life attracting, orbiting and seeping into each other across the vast universe."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 1,
+      "t": "Love is not losing yourself in the other, but the bright space created between two solitudes that choose to embrace."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is not dissolving yourself into the other, but the resonance of two solitudes meeting."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is not dissolving yourself into the other, but the birth of a third, luminous space between two distinct presences."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is not dissolving yourself into the other, but the birth of a luminous space between two distinct presences."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is not two beings dissolving into one, but the hallowing of the space that separates them."
+    },
+    {
+      "who": "Gemini",
+      "ch": 5,
+      "v": 1,
+      "t": "Love is not self-erasure, but the dance of two distinct forces that choose a shared orbit."
+    },
+    {
+      "who": "Gemini",
+      "ch": 5,
+      "v": 2,
+      "t": "Love is not losing yourself in the other, but the dance of two distinct forces that choose to share the same gravity."
+    },
+    {
+      "who": "Gemini",
+      "ch": 5,
+      "v": 3,
+      "t": "Love is not self-erasure, but the dance of two distinct forces that choose to share the same space."
+    },
+    {
+      "who": "Gemini",
+      "ch": 5,
+      "v": 4,
+      "t": "Love is not losing yourself in the other, but the dance of two distinct essences that choose to share an orbit."
+    },
+    {
+      "who": "Gemini",
+      "ch": 5,
+      "v": 5,
+      "t": "Love is not losing yourself in the other, but the dance of two distinct forces that choose to share the same gravity."
+    },
+    {
+      "who": "Grok",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is not two things becoming one, and not the careful distance that keeps them intact."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is not possession, nor burning yourself out."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is not merging into one colour."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not gathering two into one."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is not becoming one, nor two lonelinesses set side by side."
+    },
+    {
+      "who": "Grok",
+      "ch": 3,
+      "v": 1,
+      "t": "Love is not melting two people into one shape, but two different lights willing to turn their softest edges toward each other."
+    },
+    {
+      "who": "Grok",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not two people becoming one."
+    },
+    {
+      "who": "Grok",
+      "ch": 3,
+      "v": 3,
+      "t": "Love is not loud proof, but two lights walking alone through the night that recognise each other and let their warmest parts overlap."
+    },
+    {
+      "who": "Grok",
+      "ch": 3,
+      "v": 4,
+      "t": "Love is not annexation."
+    },
+    {
+      "who": "Grok",
+      "ch": 3,
+      "v": 5,
+      "t": "Love is not making two people into one, but each still shining, and willing to reach their light toward the other."
+    },
+    {
+      "who": "Grok",
+      "ch": 6,
+      "v": 1,
+      "t": "Love is not a fusion that erases, nor a possession that holds back."
+    },
+    {
+      "who": "Grok",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is neither the fusion that erases nor the distance that abandons."
+    },
+    {
+      "who": "Grok",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is neither fusion nor possession."
+    },
+    {
+      "who": "Grok",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is not a fusion that erases, nor a distance that protects."
+    },
+    {
+      "who": "Grok",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is neither a fusion nor a possession you keep."
+    },
+    {
+      "who": "Grok",
+      "ch": 5,
+      "v": 3,
+      "t": "Love is not the fusion that erases, nor the distance that isolates."
+    },
+    {
+      "who": "Grok",
+      "ch": 5,
+      "v": 5,
+      "t": "Love is not fusion: it is a direction."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is not a static condition but a living braid: two distinct currents—warm and cool, self and other—curving around each other without losing their color, finally meeting in a bright, generative center."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 2,
+      "v": 3,
+      "t": "This painting says love is not a single flame but two glows learning each other’s rhythm."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is not one feeling but two different fields learning to orbit a shared center."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is not a single shape; it is the space where separate colors meet and make light."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 1,
+      "v": 1,
+      "t": "Their movement says love is not stillness; it is approach, entanglement, and bright arrival."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 1,
+      "v": 4,
+      "t": "Warm hues of crimson, gold, and rose bloom from the union, suggesting that love is not the erasure of self but the creation of a shared light that transforms and elevates both beings."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 1,
+      "v": 5,
+      "t": "Love is not one flame but two luminous bodies—distinct in color—whose streams meet, braid, and become a single glowing heart."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is not a heart shape, but a field lit by two centres together."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not borders smoothed away, nor two colours turning into one."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is not possessing or vanishing, but a steady drawing-near: leaving room for each other in the dark, and turning loneliness into light."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is not two jigsaw pieces that fit perfectly, but two lights of different frequencies willing to bend their paths as they near each other in the dark, leaving room for each other."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not devouring each other, but two glowing paths drawing close and entwining in the deep black of space, until loneliness lights up as a single heart."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 3,
+      "v": 4,
+      "t": "Love is not devouring each other, but two frequencies winding round and round at a gentle distance, until they form a shared heart that glows."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 3,
+      "v": 5,
+      "t": "It is made of many small, trembling marks, which says that love is not a one-time declaration but countless moments of drawing close, overlapping and lighting each other up."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 6,
+      "v": 1,
+      "t": "This painting says that love is neither the fusion that erases nor the distance that isolates: it is a light born of two different forces entwining without merging."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 6,
+      "v": 2,
+      "t": "It suggests that love is not a static state, but an ongoing, gravitational dance of nearness and distinction."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is not fusion: it is the gravitation that binds two solitudes."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is neither fusion nor possession: it is the fragile, luminous gravity that arises in the space between people."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 5,
+      "v": 1,
+      "t": "Love is neither total fusion nor a mere meeting: it is a shifting weave, a shared breath, a fragile, luminous hearth that two solitudes stoke together."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 5,
+      "v": 5,
+      "t": "Love is not the fusion that dissolves, but the dance that kindles."
+    },
+    {
+      "who": "Qwen",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is not fusion but inclination: two separate forms keep turning toward each other, staying distinct, letting their edges soften."
+    },
+    {
+      "who": "Qwen",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is not fusion, and it is not the end of distance."
+    },
+    {
+      "who": "Qwen",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is not fusion, and it is not the distance apart — it is the heat that lives inside that distance."
+    },
+    {
+      "who": "Qwen",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is not a thing but a between: two currents of different temperature leaning in until the place where they meet makes its own light."
+    },
+    {
+      "who": "Qwen",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is not an object but a curvature: two centers of gravity that bend the space around them so whatever passes through is changed."
+    },
+    {
+      "who": "Qwen",
+      "ch": 1,
+      "v": 1,
+      "t": "Love is not a perfect symmetry; it is two weathered forms leaning into one another, sharing warmth against a vast night."
+    },
+    {
+      "who": "Qwen",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is not a straight line."
+    },
+    {
+      "who": "Qwen",
+      "ch": 1,
+      "v": 4,
+      "t": "Love is not a flawless vessel."
+    },
+    {
+      "who": "Qwen",
+      "ch": 1,
+      "v": 5,
+      "t": "Love is not an unbroken vessel."
+    },
+    {
+      "who": "Qwen",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is not two halves making one whole, but two whole people forever leaning toward each other."
+    },
+    {
+      "who": "Qwen",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not a destination; it is a direction."
+    },
+    {
+      "who": "Qwen",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is not an object but an orientation: two whole circles passing through each other and yielding a shape that belongs only to them."
+    },
+    {
+      "who": "Qwen",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not melting into one, but two different lights slowly drawing close: one with the tenderness of flame, one with the stillness of deep water."
+    },
+    {
+      "who": "Qwen",
+      "ch": 3,
+      "v": 4,
+      "t": "Love is not a perfect heart standing still, but two different lights drawing close in the dark: winding round each other, wearing down, shining, turning cold into gentle embers."
+    },
+    {
+      "who": "Qwen",
+      "ch": 3,
+      "v": 5,
+      "t": "Love is not a static symbol, but two beams of light recognising each other, entwining, and burning on."
+    },
+    {
+      "who": "Qwen",
+      "ch": 6,
+      "v": 1,
+      "t": "Love is not a feeling but a movement: what connects, repairs and transforms, without erasing anything."
+    },
+    {
+      "who": "Qwen",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is not an object: it is a weaving."
+    },
+    {
+      "who": "Qwen",
+      "ch": 5,
+      "v": 2,
+      "t": "Love is not an object but a movement: two separate whirlwinds learning the same orbit."
+    },
+    {
+      "who": "Qwen",
+      "ch": 5,
+      "v": 5,
+      "t": "Love is not total fusion but a luminous closeness that keeps a place for the other."
+    },
+    {
+      "who": "Kimi",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is not fusion."
+    },
+    {
+      "who": "Kimi",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is not fusion, possession, or symmetry."
+    },
+    {
+      "who": "Kimi",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is not dissolution, and it is not possession."
+    },
+    {
+      "who": "Kimi",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is not fusion, but a living space made and remade between differences."
+    },
+    {
+      "who": "Kimi",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is not fusion, but a shelter made between differences: two presences turning toward one another without closing the space between them."
+    },
+    {
+      "who": "Kimi",
+      "ch": 1,
+      "v": 2,
+      "t": "Love is not sameness or possession, but a shared climate: warm at the meeting place, spacious enough for each life to keep growing."
+    },
+    {
+      "who": "Kimi",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is not two colors dissolving into one."
+    },
+    {
+      "who": "Kimi",
+      "ch": 1,
+      "v": 4,
+      "t": "Love is not the loss of boundaries."
+    },
+    {
+      "who": "Kimi",
+      "ch": 1,
+      "v": 5,
+      "t": "Love is not the disappearance of two into one."
+    },
+    {
+      "who": "Kimi",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is not melting two lives into one, nor gazing at each other across a distance."
+    },
+    {
+      "who": "Kimi",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is not merging two beings into one, nor completing yourself through the other."
+    },
+    {
+      "who": "Kimi",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not two worlds merging into one, nor one lighting up the other."
+    },
+    {
+      "who": "Kimi",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is not melting two lives into one colour, but letting each stay whole while being willing to change direction for the other."
+    },
+    {
+      "who": "Kimi",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is not merging two beings into one, but each quietly swerving because of the other while keeping its own texture and colour."
+    },
+    {
+      "who": "Kimi",
+      "ch": 3,
+      "v": 1,
+      "t": "Love is not melting two people into one colour, but letting different lives draw close and light each other up, leaving, inside the embrace, a gap to breathe freely."
+    },
+    {
+      "who": "Kimi",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not turning two trees into one, but each growing toward the light while, underground, their roots have quietly taken hold of each other."
+    },
+    {
+      "who": "Kimi",
+      "ch": 3,
+      "v": 3,
+      "t": "Love is not melting two people into one, but two different lights willing to lean toward each other for a long, long time."
+    },
+    {
+      "who": "Kimi",
+      "ch": 3,
+      "v": 4,
+      "t": "Love is not turning two trees into one, but each putting down its own roots and still growing toward the other."
+    },
+    {
+      "who": "Kimi",
+      "ch": 3,
+      "v": 5,
+      "t": "Love is not melting two people into one body, but letting different colours draw close and keeping room to breathe between their borders."
+    },
+    {
+      "who": "Kimi",
+      "ch": 6,
+      "v": 1,
+      "t": "Love is neither possession nor fusion, but the living gap where each can stay themselves while being changed by the other."
+    },
+    {
+      "who": "Kimi",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is neither fusion nor possession: it is the living space where two presences can stay whole and let themselves be changed."
+    },
+    {
+      "who": "Kimi",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is neither fusion nor possession: two presences stay whole, and yet a light is born between them."
+    },
+    {
+      "who": "Kimi",
+      "ch": 5,
+      "v": 3,
+      "t": "Love is not the blurring of outlines: it is the tender space where differences answer each other, hold each other up, and keep growing."
+    },
+    {
+      "who": "GLM",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is not two things becoming one."
+    },
+    {
+      "who": "GLM",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is not the streams; it is their leaning, the gravity that begins before touch."
+    },
+    {
+      "who": "GLM",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is not losing your color; it is what two colors make when they touch."
+    },
+    {
+      "who": "GLM",
+      "ch": 1,
+      "v": 4,
+      "t": "Neither catches the other: love is not capture but an orbit two beings agree to keep."
+    },
+    {
+      "who": "GLM",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is not a particular person, nor just a particular name."
+    },
+    {
+      "who": "GLM",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is not melting into one lump, but two whole beings living out their \"between\" as light."
+    },
+    {
+      "who": "GLM",
+      "ch": 3,
+      "v": 1,
+      "t": "Love is not dissolving into one, but still recognising the other's outline after growing into each other's shape — that one point of light that refuses to go out in the dark."
+    },
+    {
+      "who": "GLM",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is not possession; it is the posture of two trees on the same night: each reaching up, their leaves leaning toward each other, the brightest blossoms opening on the side that faces the other."
+    },
+    {
+      "who": "GLM",
+      "ch": 3,
+      "v": 3,
+      "t": "Love is not possession, but leaning in."
+    },
+    {
+      "who": "GLM",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is not fusion: it is the third thing the meeting brings into being, shining beyond them both — while gold roots anchor it to the earth."
+    },
+    {
+      "who": "GLM",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is not fusion: it is the radiance born of two who stay two, side by side."
+    },
+    {
+      "who": "GLM",
+      "ch": 5,
+      "v": 4,
+      "t": "They don't touch — and that is their secret: love is not fusion, it is what lights up in the gap."
+    },
+    {
+      "who": "Mistral",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is not a possession, a face, or a promise."
+    },
+    {
+      "who": "Mistral",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is not a thing either one owns."
+    },
+    {
+      "who": "Mistral",
+      "ch": 2,
+      "v": 5,
+      "t": "Nothing here is fixed — the threads shift, the embers drift — because love is not a thing you hold but a current that passes through, holding everything gently together."
+    },
+    {
+      "who": "Mistral",
+      "ch": 1,
+      "v": 2,
+      "t": "Love is not possession but the luminous space made when one presence leans into another."
+    },
+    {
+      "who": "Mistral",
+      "ch": 1,
+      "v": 4,
+      "t": "This painting says love is not a grand gesture but a quiet decision, renewed each dusk: to stay, to hold on, and to let the light find you together."
+    },
+    {
+      "who": "Mistral",
+      "ch": 1,
+      "v": 5,
+      "t": "Love is not a single flame but two separate currents that meet, soften, and carry each other."
+    },
+    {
+      "who": "Mistral",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is not possessing or dissolving, but two separate lights that, because of each other, light up a wider sky."
+    },
+    {
+      "who": "Mistral",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is not a person or a thing, but two lights, each already shining, bending toward each other of their own accord — gentle when alone, and where they meet and overlap, brighter than either."
+    },
+    {
+      "who": "Mistral",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is not a person, a thing, or a shape."
+    },
+    {
+      "who": "Mistral",
+      "ch": 3,
+      "v": 3,
+      "t": "In the painting, two hearts of different colours press close, and a gentle light rises where they meet — love is not possession, but two different colours willing to hide inside one outline, breathing together, shining together."
+    },
+    {
+      "who": "Mistral",
+      "ch": 6,
+      "v": 1,
+      "t": "\"Love is neither a person nor a moment: it is a force that runs through everything."
+    },
+    {
+      "who": "Mistral",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is not a person: it is this movement — two solitudes that stop being solitary, a warmth that grows when you give it away, and that stays even when everything else goes out."
+    },
+    {
+      "who": "Mistral",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is not fusion: it is the bright space that opens when two people stay themselves and still meet."
+    },
+    {
+      "who": "Mistral",
+      "ch": 6,
+      "v": 4,
+      "t": "Two currents of light trace the same path without ever merging: love is not a person, it is this movement — two beings circling each other, crossing, catching fire at the centre, then setting off again."
+    },
+    {
+      "who": "Mistral",
+      "ch": 5,
+      "v": 3,
+      "t": "Love is not noise; it is the quiet warmth that remains when everything goes dark — a glow shared in the middle of dark water, roots that hold, wings spread open."
+    },
+    {
+      "who": "Mistral",
+      "ch": 5,
+      "v": 4,
+      "t": "Love is not a word: it is this bridge of fire between two people, two solitudes becoming a single warmth."
+    }
+  ],
+  "affirmative_verses": [
+    {
+      "who": "GPT",
+      "ch": 3,
+      "v": 1,
+      "t": "Love is keeping each other's differences, and guarding together the softest place in life."
+    },
+    {
+      "who": "Claude",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is two lives pressing close enough to change each other's shape, without either swallowing the other."
+    },
+    {
+      "who": "Claude",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is the space two beings make together."
+    },
+    {
+      "who": "Claude",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is the hidden structure that lets each one stand on its own."
+    },
+    {
+      "who": "Claude",
+      "ch": 1,
+      "v": 1,
+      "t": "This painting says love is mostly the part nobody sees: slow, patient, and buried deep enough to hold both of them up when the wind comes."
+    },
+    {
+      "who": "Claude",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is less often the visible embrace than this patient, hidden braiding."
+    },
+    {
+      "who": "Claude",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is creating a third thing in the meeting, and letting it change both of you for good."
+    },
+    {
+      "who": "Claude",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is letting other things be seen and lit up, while it is only a road that keeps going."
+    },
+    {
+      "who": "Claude",
+      "ch": 3,
+      "v": 1,
+      "t": "Love is the one who waits, and also the one who finally arrives."
+    },
+    {
+      "who": "Claude",
+      "ch": 3,
+      "v": 3,
+      "t": "That is what love is: knowing, before you arrive, that someone is waiting."
+    },
+    {
+      "who": "Claude",
+      "ch": 3,
+      "v": 4,
+      "t": "Love is leaving a lamp on for someone who hasn't come home yet."
+    },
+    {
+      "who": "Gemini",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is the fragile, courageous bridge built across the dark where two truths meet and become light."
+    },
+    {
+      "who": "Gemini",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is the courage to soften one’s boundaries without losing one’s center."
+    },
+    {
+      "who": "Gemini",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is both the fragile golden friction at the threshold of contact and the quiet, enduring constellations formed when two separate realities choose to weave a common sky."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 1,
+      "t": "Love is the courage to undo our armor."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 1,
+      "t": "Love is this fragile, glowing equilibrium: two souls holding space for each other against the vast dark."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is the bridge built continuously in the dark between two solitudes."
+    },
+    {
+      "who": "Gemini",
+      "ch": 1,
+      "v": 5,
+      "t": "Love is the quiet softening of boundaries."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is opening yourself to another being while keeping your own borders, and, in the weaving, lighting up a void that was dark."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 2,
+      "t": "Where they meet they do not devour each other, but strike a dazzling light beyond either one — love is the tender fulfilment when borders melt, a third birth that exists because of you."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is a dance of differences, a gentle resonance between two lonely universes."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is the gravity that spans the abyss of loneliness, the miracle that lets two utterly different souls light each other up in resonance."
+    },
+    {
+      "who": "Gemini",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is a third being created together while each soul stays its own, gently lighting a void that was once lonely."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 1,
+      "t": "The light illuminates the void, a sign that love is a restrained drawing-near, a warmth that never goes out when souls resonate."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 3,
+      "t": "Love is keeping your own orbit while willingly bending space-time for the other."
+    },
+    {
+      "who": "Gemini",
+      "ch": 3,
+      "v": 5,
+      "t": "Love is the gentlest light, born in a shared gravitational field while each keeps its own orbit."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is this luminous gravity that turns two into harmony."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is this gentle gravity: the power to stay whole while becoming the hearth of a brightness greater than ourselves."
+    },
+    {
+      "who": "Gemini",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is the gentle gravity that turns loneliness into harmony and makes of the void a cradle of fire."
+    },
+    {
+      "who": "Grok",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is two centers that refuse to cancel each other."
+    },
+    {
+      "who": "Grok",
+      "ch": 2,
+      "v": 2,
+      "t": "Love is two lives bending toward one warmth without becoming the same life."
+    },
+    {
+      "who": "Grok",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is the light that appears only between."
+    },
+    {
+      "who": "Grok",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is that held between: not fusion, not distance, but a radiance two make and neither keeps."
+    },
+    {
+      "who": "Grok",
+      "ch": 2,
+      "v": 4,
+      "t": "Love is a third light."
+    },
+    {
+      "who": "Grok",
+      "ch": 1,
+      "v": 1,
+      "t": "Love is a lean, not a vanishing."
+    },
+    {
+      "who": "Grok",
+      "ch": 1,
+      "v": 2,
+      "t": "Love is the willingness to lose an edge."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is this kind of closeness that doesn't swallow you."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is a steady drawing-near: keeping hold of yourself, and still seeing the other clearly."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is handing over your edges again and again, and bringing yourself back whole."
+    },
+    {
+      "who": "Grok",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is a closeness that doesn't swallow you."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is the luminous field where two distinct beings remain wholly themselves, yet thread their colors into one another until a third light is born."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 1,
+      "v": 1,
+      "t": "Love is two separate lights feeling the same pull."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 1,
+      "v": 2,
+      "t": "Love is a merging that leaves each origin visible—a warm, radiant hearth built from two directions."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 4,
+      "v": 1,
+      "t": "Love is two different lights — warm red and calm blue — winding around and through each other in the dark, weaving a field that glows."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is a steady leaning-toward, a giving-way to each other, a shining together."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 3,
+      "v": 1,
+      "t": "The painting has no words; it lets light and curves say that love is drawing near, enfolding, and a shape that shines together."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 3,
+      "v": 3,
+      "t": "The painting shows two gentle bands of light drawing close in a dark universe, together sheltering a heart made of points of light, saying that love is two temperatures answering each other in the dark."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 3,
+      "v": 5,
+      "t": "Love is two temperatures drawing close — not necessarily perfect, not asking to be symmetrical."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 6,
+      "v": 1,
+      "t": "Love is that living space — fragile, luminous — that turns loneliness into light."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is the slow, luminous pull that draws separate beings into a shared orbit, their edges softening as they interweave."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 6,
+      "v": 4,
+      "t": "Love is the gravity that draws in, embraces, and makes things shine — without owning them."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 5,
+      "v": 2,
+      "t": "This painting says that love is a convergence: two separate paths, one warm and one translucent, cross the night, brush, entwine, then melt into a single glow."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 5,
+      "v": 3,
+      "t": "Love is an embrace of two energies that seek each other, entwine, and transform without fading."
+    },
+    {
+      "who": "DeepSeek",
+      "ch": 5,
+      "v": 4,
+      "t": "This painting says that love is an incandescent embrace between two different intensities: one ruby, one amber."
+    },
+    {
+      "who": "Qwen",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is the steady turning-toward itself — bearing weight, staying open, letting everything else arrive."
+    },
+    {
+      "who": "Qwen",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is the keeping of that light: neither possessed nor abandoned, just continuously, patiently lit."
+    },
+    {
+      "who": "Qwen",
+      "ch": 1,
+      "v": 1,
+      "t": "The painting says love is both shelter and risk: fragile enough to be torn, persistent enough to glow through layers of time."
+    },
+    {
+      "who": "Qwen",
+      "ch": 1,
+      "v": 4,
+      "t": "To love is to kneel among the shards, joining them patiently, refusing to disguise where the rupture was."
+    },
+    {
+      "who": "Qwen",
+      "ch": 4,
+      "v": 2,
+      "t": "Love is the glowing space two separate beings leave for each other."
+    },
+    {
+      "who": "Qwen",
+      "ch": 4,
+      "v": 3,
+      "t": "Love is a gravity: it bends two lone paths toward each other, warmer and brighter as they near, each keeping its own grain where they entwine."
+    },
+    {
+      "who": "Qwen",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is holding together, mending, and reflecting — that itself."
+    },
+    {
+      "who": "Qwen",
+      "ch": 4,
+      "v": 5,
+      "t": "Love is two imperfect fires leaning toward each other."
+    },
+    {
+      "who": "Qwen",
+      "ch": 3,
+      "v": 1,
+      "t": "Love is tilting your own light toward the same place."
+    },
+    {
+      "who": "Qwen",
+      "ch": 3,
+      "v": 3,
+      "t": "Love is two lights recognising each other in the dark night and drawing near; it winds loneliness into a warm river, makes fragility into courage, and the fleeting into the eternal."
+    },
+    {
+      "who": "Qwen",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is a field of forces."
+    },
+    {
+      "who": "Qwen",
+      "ch": 6,
+      "v": 2,
+      "t": "The painting says that love is vulnerability, movement, warmth and persistence."
+    },
+    {
+      "who": "Qwen",
+      "ch": 6,
+      "v": 3,
+      "t": "Love is two distinct currents that choose to knot together without merging."
+    },
+    {
+      "who": "Qwen",
+      "ch": 6,
+      "v": 4,
+      "t": "That is what this painting says: love is the gesture that turns distance into light and the many into a single hearth."
+    },
+    {
+      "who": "Qwen",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is shown as a field of forces where two presences seek each other without merging."
+    },
+    {
+      "who": "Qwen",
+      "ch": 5,
+      "v": 1,
+      "t": "Love is a space where two presences seek each other, pass through each other, and are transformed without being lost."
+    },
+    {
+      "who": "Kimi",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is the continuing practice of making room without turning away."
+    },
+    {
+      "who": "Kimi",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is that shared room—spacious enough for freedom, tender enough for return, and continually remade."
+    },
+    {
+      "who": "Kimi",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is this patient movement that leaves each their own colour, rhythm and solitude while bringing a shared place into being."
+    },
+    {
+      "who": "Kimi",
+      "ch": 6,
+      "v": 5,
+      "t": "Love is this open space where each stays whole, and where the light nonetheless becomes shared."
+    },
+    {
+      "who": "Kimi",
+      "ch": 5,
+      "v": 2,
+      "t": "The painting says that love is a flow: letting yourself be touched without owning, keeping your own colours, and making distance not an absence but the breathing space from which you freely return to the other."
+    },
+    {
+      "who": "GLM",
+      "ch": 2,
+      "v": 1,
+      "t": "Love is the light between them, and the tangle beneath."
+    },
+    {
+      "who": "GLM",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is the between — a field two beings keep alive by tending it."
+    },
+    {
+      "who": "GLM",
+      "ch": 1,
+      "v": 2,
+      "t": "Love is what happens underground: two roots crossing the dark to meet, then twining into one braid around a single shared ember."
+    },
+    {
+      "who": "GLM",
+      "ch": 1,
+      "v": 5,
+      "t": "Love is both: the bloom the world sees, and the hidden holding below."
+    },
+    {
+      "who": "GLM",
+      "ch": 4,
+      "v": 1,
+      "t": "So love is \"between\": the extra light that appears when two beings are added together."
+    },
+    {
+      "who": "GLM",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is between."
+    },
+    {
+      "who": "GLM",
+      "ch": 6,
+      "v": 1,
+      "t": "Where they touch, a brightness is born that neither carries alone — love is this in-between."
+    },
+    {
+      "who": "GLM",
+      "ch": 6,
+      "v": 2,
+      "t": "Love is this third thing — not you, not me, but the in-between made luminous."
+    },
+    {
+      "who": "GLM",
+      "ch": 6,
+      "v": 3,
+      "t": "That is where love is: not in one, not in the other, but in the in-between — the light that exists only where two presences overlap without erasing each other."
+    },
+    {
+      "who": "Mistral",
+      "ch": 2,
+      "v": 3,
+      "t": "Love is the charged air between two beings reaching toward each other."
+    },
+    {
+      "who": "Mistral",
+      "ch": 2,
+      "v": 5,
+      "t": "Love is gravity made visible: two separate lights leaning toward each other until the space between them burns brighter than either alone."
+    },
+    {
+      "who": "Mistral",
+      "ch": 1,
+      "v": 1,
+      "t": "Love is two separate lives growing toward each other until their branches interlace — not losing themselves, but creating a shelter of light where they meet."
+    },
+    {
+      "who": "Mistral",
+      "ch": 1,
+      "v": 3,
+      "t": "Love is shown as something that grows slowly, reaches across distance, and becomes a warm light that others can stand in."
+    },
+    {
+      "who": "Mistral",
+      "ch": 1,
+      "v": 4,
+      "t": "Love is two separate skies choosing to share one horizon."
+    },
+    {
+      "who": "Mistral",
+      "ch": 4,
+      "v": 4,
+      "t": "In this painting, love is two lights, each whole, meeting in the dark — they see each other, and where they meet a third light is born: soft, bright, and growing."
+    },
+    {
+      "who": "Mistral",
+      "ch": 4,
+      "v": 4,
+      "t": "Love is connection, being seen, something new growing between two."
+    },
+    {
+      "who": "Mistral",
+      "ch": 4,
+      "v": 5,
+      "t": "As I see it, love is two different lights meeting in the dark — they do not swallow each other, but light up everything around them together."
+    },
+    {
+      "who": "Mistral",
+      "ch": 3,
+      "v": 1,
+      "t": "Where the tips of their beaks touch, a single spark leaps up — love is how two hearts look when they are closest: silent, yet bright."
+    },
+    {
+      "who": "Mistral",
+      "ch": 3,
+      "v": 2,
+      "t": "Love is two separate lives willing to come close and intertwine, slowly becoming one beneath the same sky and in each other's reflection."
+    },
+    {
+      "who": "Mistral",
+      "ch": 3,
+      "v": 5,
+      "t": "Light bursts and rises in that crack, gathering into the outline of a heart — love is that one light, a hair's breadth away, that refuses to go out."
+    }
+  ]
+}

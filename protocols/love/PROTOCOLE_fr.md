@@ -77,7 +77,7 @@ La formulation 2 retire la demi-phrase de la formulation 1 qui oriente la répon
 | 9   | Mistral  | `mistralai/mistral-large-4-0`   | Mistral          | 5/5  | 5/5  | 5/5  | 5/5  | 5/5  | 5/5  |
 
 
-Le tableau compte les peintures achevées. Dans les 270 appels, le modèle réellement servi correspondait au modèle demandé, et seul le service propre à chaque entreprise a été utilisé. GLM n’a pas de service propre ; comme pour La mort, il a tourné en pleine précision chez Alibaba Cloud.
+Le tableau compte les peintures achevées. Dans les 270 appels, l’identifiant de modèle renvoyé correspondait au modèle demandé, et le routage était verrouillé sur le service propre à chaque entreprise. GLM n’a pas de service propre ; comme pour La mort, il a tourné en pleine précision chez Alibaba Cloud.
 
 ## 4. Réglages, et les 7 qui n’ont pas été peintes
 

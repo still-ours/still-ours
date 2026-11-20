@@ -77,7 +77,7 @@ Ask 2 drops the half-sentence in ask 1 that steers the answer toward the abstrac
 | 9   | Mistral  | `mistralai/mistral-large-4-0`   | Mistral          | 5/5  | 5/5  | 5/5  | 5/5  | 5/5  | 5/5  |
 
 
-The table counts finished paintings. In all 270 calls the model actually served matched the model requested, and only each company’s own service was used. GLM has no first-party service; as for Death, it ran at full precision on Alibaba Cloud.
+The table counts finished paintings. In all 270 calls the returned model identifier matched the model requested, and routing was locked to each company’s own service. GLM has no first-party service; as for Death, it ran at full precision on Alibaba Cloud.
 
 ## 4. Settings, and the 7 that were never painted
 

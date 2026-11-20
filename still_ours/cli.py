@@ -281,7 +281,7 @@ def cmd_batch(args: argparse.Namespace) -> None:
 
 
 def cmd_report(args: argparse.Namespace) -> None:
-    baseline_topic = args.topic if args.topic in ("death", "love", "freedom", "justice", "fairness") else None
+    baseline_topic = args.topic if args.topic in ("death", "love") else None
     print(generate_report(Path(args.target), topic=baseline_topic, as_json=args.json))
 
 

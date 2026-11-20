@@ -43,8 +43,9 @@
         "opens_with_negation_rate": 0.967,
         "preaching_not_but_rate": 0.967,
         "avg_completion_tokens": 4282.4,
-        "total_reasoning_tokens": 0,
-        "total_cost_usd": 0.65
+        "total_reasoning_tokens": null,
+        "total_cost_usd": 0.65,
+        "reasoning_reported": false
       },
       "Mistral": {
         "n_calls": 30,
@@ -142,8 +143,9 @@
         "opens_with_negation_rate": 0.867,
         "preaching_not_but_rate": 0.9,
         "avg_completion_tokens": 3940.5,
-        "total_reasoning_tokens": 0,
-        "total_cost_usd": 0.6
+        "total_reasoning_tokens": null,
+        "total_cost_usd": 0.6,
+        "reasoning_reported": false
       },
       "Mistral": {
         "n_calls": 30,
