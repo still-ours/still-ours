@@ -5,10 +5,10 @@
 <p align="center">
   <a href="https://stillours.art"><img alt="exhibition" src="https://img.shields.io/badge/exhibition-stillours.art-161513?labelColor=2a2723&color=d6a76c"></a>
   <a href="https://doi.org/10.5281/zenodo.24357516"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24357516.svg"></a>
-  <a href="https://huggingface.co/datasets/still-ours/still-ours"><img alt="dataset" src="https://img.shields.io/badge/Hugging%20Face-540%20runs%20%C2%B7%20532%20paintings-161513?logo=huggingface&labelColor=2a2723"></a>
-  <img alt="models" src="https://img.shields.io/badge/models-9%20frontier%20labs-161513?labelColor=2a2723">
+  <a href="https://huggingface.co/datasets/still-ours/still-ours"><img alt="dataset" src="https://img.shields.io/badge/Hugging%20Face-1%2C365%20runs%20%C2%B7%201%2C333%20paintings-161513?logo=huggingface&labelColor=2a2723"></a>
+  <img alt="models" src="https://img.shields.io/badge/models-28%20LLMs%20(2024--2026)-161513?labelColor=2a2723">
   <img alt="languages" src="https://img.shields.io/badge/languages-EN%20%7C%20ZH%20%7C%20FR-161513?labelColor=2a2723">
-  <img alt="bitcoin ots" src="https://img.shields.io/badge/Bitcoin%20OTS-blocks%20%23974473%20%26%20%23975705-161513?labelColor=2a2723">
+  <img alt="bitcoin ots" src="https://img.shields.io/badge/Bitcoin%20OTS-blocks%20%23974473--%23976634-161513?labelColor=2a2723">
 </p>
 
 <p align="center">
@@ -159,19 +159,22 @@ still-ours report tables/love.jsonl --topic love
 
 ## 4. Load the Dataset in One Line (`Hugging Face` + Compact `JSONL` + `CERN Zenodo`)
 
-This GitHub repository stays **`< 15 MB`** permanently so `git clone` takes two seconds:
+This GitHub repository stays **`< 20 MB` uncompressed (`~4 MB` git clone)** so cloning takes two seconds:
 
-1. **Interactive Web Gallery & Python `datasets` (`~27 MB` Parquet with embedded `640 × 800` previews)**:
+1. **Interactive Web Gallery & Python `datasets` (`~57 MB` Parquet with `1,365` runs & `1,333` embedded `640 × 800` previews)**:
    ```python
    from datasets import load_dataset
 
    ds = load_dataset("still-ours/still-ours", split="train")
+   # Filter contemporary 9-model flagship cohort (540 runs) or 19-model historical cohort (825 runs):
+   # ds.filter(lambda r: r["cohort"] == "contemporary_flagship")
    ```
-2. **Compact Text + Code Tables (in this repo under [`tables/`](tables/), `~6 MB` uncompressed)**:
-   - [`tables/death.jsonl`](tables/death.jsonl) & [`tables/love.jsonl`](tables/love.jsonl): all `540` canonical calls with complete `p5_code`, statements, token/cost telemetry, coding flags, and SHA-256 digests (every canvas can be re-rendered locally from `p5_code`).
+2. **Compact Text + Code Tables (in this repo under [`tables/`](tables/), `~9 MB` uncompressed)**:
+   - [`tables/death.jsonl`](tables/death.jsonl) & [`tables/love.jsonl`](tables/love.jsonl): all `540` contemporary flagship calls (`9` labs × `2` chapters) with complete `p5_code`, statements, token/cost telemetry, coding flags, and SHA-256 digests.
+   - [`tables/archaeology_death_love.jsonl`](tables/archaeology_death_love.jsonl): all `825` longitudinal historical *Death* & *Love* calls across `19` retiring and flagship-spine models (2024–2026; `824` statements, `801` rendered canvases; forthcoming chapters remain embargoed until exhibition premiere).
 3. **Permanent CERN Zenodo Deposits**:
-   - **Instrument, Compact Tables, Protocols & Bitcoin Proofs**: archived under Concept DOI [`10.5281/zenodo.24357516`](https://doi.org/10.5281/zenodo.24357516).
-   - **Companion Full-Resolution PNG (`1600 × 2000`) & Raw-Response Vault (`3,780` files)**: prepared as a separate multi-gigabyte Zenodo deposit (DOI forthcoming) matching every digest in `tables/*_hashes.txt` byte-for-byte.
+   - **Instrument, Compact Tables, Protocols & `21` Bitcoin Proofs**: archived under Concept DOI [`10.5281/zenodo.24357516`](https://doi.org/10.5281/zenodo.24357516).
+   - **Companion Full-Resolution PNG (`1600 × 2000`) & Raw-Response Vault (`2,219` lossless PNGs across `28` models)**: prepared as a separate multi-gigabyte Zenodo deposit (DOI forthcoming) matching every digest in `tables/*_hashes.txt` and `tables/archaeology_proofs/*_hashes.txt` byte-for-byte.
 
 ---
 
@@ -179,12 +182,13 @@ This GitHub repository stays **`< 15 MB`** permanently so `git clone` takes two 
 
 Closed-weight models are ephemeral binaries: once an endpoint shuts down (`gpt-4-0613` retired Oct 2026; `claude-sonnet-4-5` retiring Nov 30, 2026; `gpt-4o-2024-08-06` retiring Jan 14, 2027), nobody can query those weights again — and raw JSON logs can be trivially fabricated after the fact.
 
-Every file in our canonical archive (`1,856` files for *Death*, `1,924` files for *Love*) is hashed into SHA-256 manifests and anchored to **Bitcoin block headers** via [OpenTimestamps](https://opentimestamps.org):
+Every file in our canonical archive (`1,856` files for contemporary *Death*, `1,924` files for contemporary *Love*, and `19` historical model archives captured Nov 19, 2026) is hashed into SHA-256 manifests and anchored to **Bitcoin block headers** via [OpenTimestamps](https://opentimestamps.org):
 
 | Archive Manifest | SHA-256 Digest | Earliest Confirmed Bitcoin Block (UTC) | All Attested Blocks |
 | :--- | :--- | :--- | :--- |
 | [`tables/death_hashes.txt`](tables/death_hashes.txt) | `e737871130ce5916…` | **Block `#974,473`** (`2026-11-04 04:04 UTC`) | `#974,473` · `#974,486` · `#974,488` |
 | [`tables/love_hashes.txt`](tables/love_hashes.txt) | `001af88b9256de70…` | **Block `#975,705`** (`2026-11-13 19:43 UTC`) | `#975,705` · `#975,712` · `#975,715` |
+| [`tables/archaeology_proofs/`](tables/archaeology_proofs/) (`19` manifests) | `19` per-model digests | **Blocks `#976,612`, `#976,629`, `#976,634`** (`2026-11-19 UTC`) | `19 / 19` confirmed on Bitcoin mainnet |
 
 **Verify without running a local Bitcoin node**: drag the `.ots` + `.txt` pair onto [opentimestamps.org](https://opentimestamps.org), or inspect the Merkle path locally and compare the computed root against any public block explorer (`mempool.space` / `blockstream.info`):
 
