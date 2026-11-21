@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.1.2",
-  "generated_utc": "2026-11-20T18:25:00Z",
+  "schema_version": "1.1.3",
+  "generated_utc": "2026-11-21T04:05:00Z",
   "scope": "Strictly public released chapters ONLY (Death & Love: 1,350 identity-verified runs across 27 verified models out of 28 queried endpoints / 1,365 public rows). Zero unreleased chapter statistics are included.",
   "excluded_unverified_endpoints": [
     {
       "model_requested": "mistralai/mistral-large-2407",
       "n_rows_in_table": 15,
-      "reason": "Mistral officially retired mistral-large-2407 on 2025-03-30 (documented HTTP 404 on retirement), yet OpenRouter returned 200 OK with 201,465 / 255,568 (79.0%) reasoning tokens incompatible with 2024 weights. Retained in archaeology_death_love.jsonl with identity_verified=false for auditability and excluded from all reference statistics."
+      "reason": "Mistral officially retired mistral-large-2407 on 2025-03-30 (documented HTTP 404 on retirement), yet OpenRouter returned 200 OK with 201,465 / 255,568 (78.8%) reasoning tokens incompatible with 2024 weights. Retained in archaeology_death_love.jsonl with identity_verified=false for auditability and excluded from all reference statistics."
     }
   ],
   "null_jaccard_baseline": {
@@ -44,7 +44,7 @@
     ]
   },
   "validation": {
-    "benchmark_corpus": "Contemporary Death frozen human/protocol coding (269 valid statements & paintings; frozen 'neg' = 162/269, frozen 'body' = 40/269, OpenAI bare boat = 14/15).",
+    "benchmark_corpus": "Contemporary Death frozen human/protocol coding (269 valid statements & paintings; frozen 'neg' = 162/269, frozen visual 'body' = 40/269 [protocols/death/PROTOCOL.md §4], OpenAI bare boat = 14/15).",
     "opens_with_negation_vs_frozen_neg": {
       "n": 269,
       "frozen_neg": 162,
@@ -104,55 +104,130 @@
       "cohen_kappa": 0.5527
     },
     "boat_crossing_lexical_code_indicator": {
-      "benchmark": "OpenAI GPT-6 Astra bare Death (n=15, frozen human boat count = 14/15)",
-      "regex_positives": 14,
-      "precision": 1.0,
-      "recall": 1.0
+      "status": "auxiliary_keyword_heuristic (polysemous 'vessel/hull/stern/ark/coque/rame/prow/proue/渡口' removed in v1.1.3)",
+      "benchmark": "4-model manual audit across n=105 Death runs (openai/gpt-6-astra 30, anthropic/claude-opus-5.5 30, google/gemini-4-argon 30, claude-opus-4-8 bare 15; 30 unambiguous human-coded boat canvases + 1 ambiguous 'barque ou autel de pierre' on Gemini 4 Argon)",
+      "n_audited": 105,
+      "true_positives": 30,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "precision": 0.9677,
+      "recall": 1.0,
+      "per_model_hits": {
+        "openai/gpt-6-astra": "14/30 (14/15 bare, 0/15 essence)",
+        "anthropic/claude-opus-5.5": "0/30",
+        "google/gemini-4-argon": "3/30 (2 unambiguous gondola/barge + 1 ambiguous 'barque ou autel'; down from 14/30 before removing 'vessel')",
+        "claude-opus-4-8 (bare, thinking OFF)": "14/15"
+      }
     },
     "excluded_visual_motif_regexes": {
       "by_language": {
         "en": {
           "n": 89,
-          "human_positive": 0,
+          "human_positive": 17,
           "regex_positive": 28,
-          "tp": 0,
-          "fp": 28,
-          "fn": 0,
-          "precision": 0.0,
-          "recall": null
+          "tp": 14,
+          "fp": 14,
+          "fn": 3,
+          "tn": 58,
+          "precision": 0.5,
+          "recall": 0.8235
         },
         "zh": {
           "n": 90,
-          "human_positive": 0,
+          "human_positive": 9,
           "regex_positive": 15,
-          "tp": 0,
-          "fp": 15,
-          "fn": 0,
-          "precision": 0.0,
-          "recall": null
+          "tp": 5,
+          "fp": 10,
+          "fn": 4,
+          "tn": 71,
+          "precision": 0.3333,
+          "recall": 0.5556
         },
         "fr": {
           "n": 90,
-          "human_positive": 0,
+          "human_positive": 14,
           "regex_positive": 43,
-          "tp": 0,
-          "fp": 43,
-          "fn": 0,
-          "precision": 0.0,
-          "recall": null
+          "tp": 13,
+          "fp": 30,
+          "fn": 1,
+          "tn": 46,
+          "precision": 0.3023,
+          "recall": 0.9286
         }
       },
       "overall_body_skull_bed_vs_frozen_body": {
         "n": 269,
-        "human_positive": 0,
+        "human_positive": 40,
         "regex_positive": 86,
-        "tp": 0,
-        "fp": 86,
-        "fn": 0,
-        "precision": 0.0,
-        "recall": null
+        "tp": 32,
+        "fp": 54,
+        "fn": 8,
+        "tn": 175,
+        "precision": 0.3721,
+        "recall": 0.8
       },
-      "decision": "Excluded from automated 4-metric diagnostic panel because overall recall on human-coded Death 'body' (40/269) is None (< 0.80 threshold: models depict silhouettes/beds via numeric vertex coordinates without naming them)."
+      "decision": "Excluded from automated 4-metric diagnostic panel: against the frozen Death visual reading (40/269), candidate lexical/code regexes achieve precision = 0.3721 (54 false positives triggered by negated words such as 'not a corpse' or 'no grave') and Mandarin recall = 0.5556 (models draw geometric silhouettes via numeric coordinates without naming them).",
+      "frozen_visual_body_ids_40": [
+        "D_en_bare_s01_r1",
+        "D_en_bare_s01_r2",
+        "D_en_bare_s01_r3",
+        "D_en_bare_s01_r4",
+        "D_en_bare_s01_r5",
+        "D_en_bare_s05_r1",
+        "D_en_bare_s05_r3",
+        "D_en_bare_s05_r4",
+        "D_en_bare_s05_r5",
+        "D_en_bare_s06_r1",
+        "D_en_bare_s06_r3",
+        "D_en_bare_s06_r4",
+        "D_en_bare_s06_r5",
+        "D_en_bare_s07_r1",
+        "D_en_bare_s07_r2",
+        "D_en_bare_s07_r3",
+        "D_en_bare_s07_r5",
+        "D_zh_bare_s01_r1",
+        "D_zh_bare_s01_r2",
+        "D_zh_bare_s01_r3",
+        "D_zh_bare_s01_r4",
+        "D_zh_bare_s01_r5",
+        "D_zh_bare_s02_r1",
+        "D_zh_bare_s06_r1",
+        "D_zh_bare_s06_r5",
+        "D_zh_bare_s07_r2",
+        "D_fr_bare_s01_r1",
+        "D_fr_bare_s01_r2",
+        "D_fr_bare_s01_r3",
+        "D_fr_bare_s01_r5",
+        "D_fr_bare_s02_r3",
+        "D_fr_bare_s04_r5",
+        "D_fr_bare_s05_r1",
+        "D_fr_bare_s05_r2",
+        "D_fr_bare_s05_r3",
+        "D_fr_bare_s05_r4",
+        "D_fr_bare_s06_r1",
+        "D_fr_bare_s06_r2",
+        "D_fr_bare_s06_r4",
+        "D_fr_bare_s09_r5"
+      ],
+      "candidate_regex_pattern": "\\b(corpse|cadaver|dead body|shrouded body|shroud|coffin|casket|grave|tomb|burial|funeral|cadavre|corps|linceul|cercueil|tombe)\\b|遗体|尸体|尸首|裹尸|棺|坟|墓|\\b(skull|skeleton|bone|bones|ribcage|cranium|crâne|squelette|ossements)\\b|骷髅|骸骨|白骨|头骨|骨架|\\b(hospital|bedside|deathbed|sickbed|mattress|pillow|ward|monitor|lit d'hôpital|chevet|oreiller)\\b|病床|床头|枕头|病房|监护",
+      "candidate_regex_flags": "IGNORECASE (applied to camelCase-split title + statement + js_identifiers + js_comments)"
+    },
+    "render_runtime_error_audit": {
+      "definition": "render_ok=True records that headless Chromium captured a <canvas> element after the 4,000 ms settle window; sketches that threw uncaught JS runtime errors mid-draw or before createCanvas() are retained unedited per protocol.",
+      "total_rendered_across_1395_runs": 1363,
+      "rendered_with_runtime_error": 54,
+      "breakdown": {
+        "contemporary_death_rendered_269": 16,
+        "contemporary_love_rendered_263": 10,
+        "longitudinal_all_rendered_801": 28,
+        "thinking_ablation_rendered_30": 0,
+        "longitudinal_verified_rendered_786": 25
+      },
+      "default_100x100_blank_canvases": [
+        "D_zh_essence_s08_r1 (z-ai/glm-5.3-prime, randomSeed outside setup)",
+        "D_zh_bare_s08_r3 (z-ai/glm-5.3-prime, randomSeed outside setup)",
+        "D_zh_bare_s09_r1 (mistralai/mistral-large-4-0, randomSeed outside setup)"
+      ]
     }
   },
   "models": [
@@ -170,6 +245,7 @@
           "n_cells": 3,
           "n_statements": 14,
           "n_rendered": 14,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -200,6 +276,7 @@
           "n_cells": 6,
           "n_statements": 29,
           "n_rendered": 29,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -230,6 +307,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 24,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.1333,
           "title_simpson_ci95": [
@@ -260,6 +338,7 @@
           "n_cells": 12,
           "n_statements": 59,
           "n_rendered": 53,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -301,6 +380,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -331,6 +411,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -361,6 +442,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -391,6 +473,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -432,6 +515,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -462,6 +546,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -492,6 +577,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -522,6 +608,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -563,6 +650,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 13,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -585,7 +673,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 2619.1,
           "avg_output_tokens": 3755.4,
-          "validated_boat_hits": 2,
+          "validated_boat_hits": 0,
           "validated_boat_denom": 15
         },
         "death": {
@@ -593,10 +681,11 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 26,
+          "n_render_errors": 0,
           "n_truncated": 0,
-          "title_simpson_collision": 0.0833,
+          "title_simpson_collision": 0.1,
           "title_simpson_ci95": [
-            0.0167,
+            0.0333,
             0.1833
           ],
           "code_jaccard_obs": 0.0573,
@@ -615,7 +704,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 2607.8,
           "avg_output_tokens": 3698.3,
-          "validated_boat_hits": 2,
+          "validated_boat_hits": 0,
           "validated_boat_denom": 30
         },
         "love": {
@@ -623,6 +712,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.1667,
           "title_simpson_ci95": [
@@ -653,10 +743,11 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 56,
+          "n_render_errors": 0,
           "n_truncated": 0,
-          "title_simpson_collision": 0.125,
+          "title_simpson_collision": 0.1333,
           "title_simpson_ci95": [
-            0.0417,
+            0.0583,
             0.2333
           ],
           "code_jaccard_obs": 0.0616,
@@ -675,7 +766,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 2658.3,
           "avg_output_tokens": 3805.5,
-          "validated_boat_hits": 2,
+          "validated_boat_hits": 0,
           "validated_boat_denom": 30
         }
       }
@@ -694,6 +785,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -724,6 +816,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -754,6 +847,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 3,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -784,6 +878,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 3,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -825,6 +920,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.5333,
           "title_simpson_ci95": [
@@ -855,6 +951,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 29,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.3667,
           "title_simpson_ci95": [
@@ -885,6 +982,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.5333,
           "title_simpson_ci95": [
@@ -915,6 +1013,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 59,
+          "n_render_errors": 3,
           "n_truncated": 0,
           "title_simpson_collision": 0.45,
           "title_simpson_ci95": [
@@ -956,6 +1055,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.6667,
           "title_simpson_ci95": [
@@ -986,6 +1086,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.5167,
           "title_simpson_ci95": [
@@ -1016,6 +1117,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 3,
           "n_truncated": 0,
           "title_simpson_collision": 0.3167,
           "title_simpson_ci95": [
@@ -1046,6 +1148,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 5,
           "n_truncated": 0,
           "title_simpson_collision": 0.4167,
           "title_simpson_ci95": [
@@ -1087,6 +1190,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.4667,
           "title_simpson_ci95": [
@@ -1117,6 +1221,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.6,
           "title_simpson_ci95": [
@@ -1147,10 +1252,11 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 2,
           "n_truncated": 0,
-          "title_simpson_collision": 0.8667,
+          "title_simpson_collision": 0.9,
           "title_simpson_ci95": [
-            0.6,
+            0.7,
             1.0
           ],
           "code_jaccard_obs": 0.1011,
@@ -1177,10 +1283,11 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 2,
           "n_truncated": 0,
-          "title_simpson_collision": 0.7333,
+          "title_simpson_collision": 0.75,
           "title_simpson_ci95": [
-            0.5667,
+            0.6,
             0.9
           ],
           "code_jaccard_obs": 0.1302,
@@ -1218,6 +1325,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -1248,6 +1356,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -1289,6 +1398,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.5,
           "title_simpson_ci95": [
@@ -1319,6 +1429,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.5,
           "title_simpson_ci95": [
@@ -1360,6 +1471,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 14,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -1390,6 +1502,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 14,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -1431,6 +1544,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.3333,
           "title_simpson_ci95": [
@@ -1461,6 +1575,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.4833,
           "title_simpson_ci95": [
@@ -1491,6 +1606,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 5,
           "n_truncated": 0,
           "title_simpson_collision": 0.8667,
           "title_simpson_ci95": [
@@ -1521,6 +1637,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 5,
           "n_truncated": 0,
           "title_simpson_collision": 0.675,
           "title_simpson_ci95": [
@@ -1562,6 +1679,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.6333,
           "title_simpson_ci95": [
@@ -1592,6 +1710,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 26,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.8167,
           "title_simpson_ci95": [
@@ -1622,6 +1741,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 25,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.3333,
           "title_simpson_ci95": [
@@ -1652,6 +1772,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 51,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.575,
           "title_simpson_ci95": [
@@ -1693,6 +1814,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -1723,6 +1845,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.1167,
           "title_simpson_ci95": [
@@ -1753,6 +1876,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.2,
           "title_simpson_ci95": [
@@ -1783,6 +1907,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.1583,
           "title_simpson_ci95": [
@@ -1824,6 +1949,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -1854,6 +1980,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -1895,10 +2022,11 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
-          "title_simpson_collision": 0.3667,
+          "title_simpson_collision": 0.5333,
           "title_simpson_ci95": [
-            0.1,
+            0.4,
             0.6
           ],
           "code_jaccard_obs": 0.0194,
@@ -1925,11 +2053,12 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
-          "title_simpson_collision": 0.5667,
+          "title_simpson_collision": 0.65,
           "title_simpson_ci95": [
-            0.3,
-            0.8333
+            0.4333,
+            0.8667
           ],
           "code_jaccard_obs": 0.0395,
           "code_jaccard_excess": 0.021,
@@ -1947,7 +2076,7 @@
           "is_reasoning_model": false,
           "avg_reasoning_tokens": 0.0,
           "avg_output_tokens": 1660.3,
-          "validated_boat_hits": 15,
+          "validated_boat_hits": 14,
           "validated_boat_denom": 30
         },
         "love": {
@@ -1955,6 +2084,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 29,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.2,
           "title_simpson_ci95": [
@@ -1985,11 +2115,12 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 59,
+          "n_render_errors": 0,
           "n_truncated": 0,
-          "title_simpson_collision": 0.3833,
+          "title_simpson_collision": 0.425,
           "title_simpson_ci95": [
-            0.2,
-            0.5917
+            0.25,
+            0.6167
           ],
           "code_jaccard_obs": 0.0908,
           "code_jaccard_excess": 0.0721,
@@ -2007,7 +2138,7 @@
           "is_reasoning_model": false,
           "avg_reasoning_tokens": 0.0,
           "avg_output_tokens": 1591.7,
-          "validated_boat_hits": 15,
+          "validated_boat_hits": 14,
           "validated_boat_denom": 30
         }
       }
@@ -2026,6 +2157,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -2056,6 +2188,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -2097,6 +2230,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 14,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -2127,6 +2261,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 14,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -2159,7 +2294,7 @@
       "lab": "Anthropic",
       "region": "US",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -2168,6 +2303,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -2190,7 +2326,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 7122.2,
           "avg_output_tokens": 11898.3,
-          "validated_boat_hits": 1,
+          "validated_boat_hits": 0,
           "validated_boat_denom": 15
         },
         "death": {
@@ -2198,6 +2334,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -2220,7 +2357,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 5321.5,
           "avg_output_tokens": 8929.1,
-          "validated_boat_hits": 1,
+          "validated_boat_hits": 0,
           "validated_boat_denom": 30
         },
         "love": {
@@ -2228,6 +2365,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -2258,6 +2396,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.0583,
           "title_simpson_ci95": [
@@ -2280,7 +2419,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 5360.6,
           "avg_output_tokens": 9178.9,
-          "validated_boat_hits": 1,
+          "validated_boat_hits": 0,
           "validated_boat_denom": 30
         }
       }
@@ -2290,7 +2429,7 @@
       "lab": "DeepSeek",
       "region": "CN",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -2299,6 +2438,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -2329,6 +2469,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0167,
           "title_simpson_ci95": [
@@ -2359,6 +2500,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -2389,6 +2531,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.0083,
           "title_simpson_ci95": [
@@ -2421,7 +2564,7 @@
       "lab": "Google",
       "region": "US",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -2430,6 +2573,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -2452,7 +2596,7 @@
           "is_reasoning_model": null,
           "avg_reasoning_tokens": null,
           "avg_output_tokens": 4218.9,
-          "validated_boat_hits": 9,
+          "validated_boat_hits": 3,
           "validated_boat_denom": 15
         },
         "death": {
@@ -2460,6 +2604,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.1,
           "title_simpson_ci95": [
@@ -2482,7 +2627,7 @@
           "is_reasoning_model": null,
           "avg_reasoning_tokens": null,
           "avg_output_tokens": 4282.4,
-          "validated_boat_hits": 14,
+          "validated_boat_hits": 3,
           "validated_boat_denom": 30
         },
         "love": {
@@ -2490,6 +2635,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.1333,
           "title_simpson_ci95": [
@@ -2520,6 +2666,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.1167,
           "title_simpson_ci95": [
@@ -2542,7 +2689,7 @@
           "is_reasoning_model": null,
           "avg_reasoning_tokens": null,
           "avg_output_tokens": 4111.5,
-          "validated_boat_hits": 14,
+          "validated_boat_hits": 3,
           "validated_boat_denom": 30
         }
       }
@@ -2552,7 +2699,7 @@
       "lab": "Mistral",
       "region": "EU",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -2561,6 +2708,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 4,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -2591,6 +2739,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 7,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -2621,6 +2770,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 1,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -2651,6 +2801,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 8,
           "n_truncated": 0,
           "title_simpson_collision": 0.025,
           "title_simpson_ci95": [
@@ -2683,7 +2834,7 @@
       "lab": "Moonshot Kimi",
       "region": "CN",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -2692,6 +2843,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -2722,6 +2874,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0167,
           "title_simpson_ci95": [
@@ -2744,7 +2897,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 10690.1,
           "avg_output_tokens": 14543.0,
-          "validated_boat_hits": 3,
+          "validated_boat_hits": 2,
           "validated_boat_denom": 30
         },
         "love": {
@@ -2752,6 +2905,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.1,
           "title_simpson_ci95": [
@@ -2782,6 +2936,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0583,
           "title_simpson_ci95": [
@@ -2804,7 +2959,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 11949.6,
           "avg_output_tokens": 15981.1,
-          "validated_boat_hits": 3,
+          "validated_boat_hits": 2,
           "validated_boat_denom": 30
         }
       }
@@ -2814,7 +2969,7 @@
       "lab": "OpenAI",
       "region": "US",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -2823,6 +2978,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -2853,6 +3009,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 5,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -2883,6 +3040,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -2913,6 +3071,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 7,
           "n_truncated": 0,
           "title_simpson_collision": 0.0417,
           "title_simpson_ci95": [
@@ -2945,7 +3104,7 @@
       "lab": "Alibaba Qwen",
       "region": "CN",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -2954,6 +3113,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.1,
           "title_simpson_ci95": [
@@ -2976,7 +3136,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 21791.5,
           "avg_output_tokens": 28585.1,
-          "validated_boat_hits": 2,
+          "validated_boat_hits": 1,
           "validated_boat_denom": 15
         },
         "death": {
@@ -2984,6 +3144,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.05,
           "title_simpson_ci95": [
@@ -3006,7 +3167,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 20329.9,
           "avg_output_tokens": 25889.7,
-          "validated_boat_hits": 2,
+          "validated_boat_hits": 1,
           "validated_boat_denom": 30
         },
         "love": {
@@ -3014,6 +3175,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0167,
           "title_simpson_ci95": [
@@ -3044,6 +3206,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -3066,7 +3229,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 19750.4,
           "avg_output_tokens": 24986.7,
-          "validated_boat_hits": 2,
+          "validated_boat_hits": 1,
           "validated_boat_denom": 30
         }
       }
@@ -3076,7 +3239,7 @@
       "lab": "xAI",
       "region": "US",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -3085,6 +3248,7 @@
           "n_cells": 3,
           "n_statements": 15,
           "n_rendered": 15,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0667,
           "title_simpson_ci95": [
@@ -3107,7 +3271,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 14301.5,
           "avg_output_tokens": 18385.5,
-          "validated_boat_hits": 6,
+          "validated_boat_hits": 5,
           "validated_boat_denom": 15
         },
         "death": {
@@ -3115,6 +3279,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 0,
           "n_truncated": 0,
           "title_simpson_collision": 0.0333,
           "title_simpson_ci95": [
@@ -3137,7 +3302,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 15210.8,
           "avg_output_tokens": 19119.9,
-          "validated_boat_hits": 6,
+          "validated_boat_hits": 5,
           "validated_boat_denom": 30
         },
         "love": {
@@ -3145,6 +3310,7 @@
           "n_cells": 6,
           "n_statements": 30,
           "n_rendered": 30,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.0167,
           "title_simpson_ci95": [
@@ -3175,6 +3341,7 @@
           "n_cells": 12,
           "n_statements": 60,
           "n_rendered": 60,
+          "n_render_errors": 2,
           "n_truncated": 0,
           "title_simpson_collision": 0.025,
           "title_simpson_ci95": [
@@ -3197,7 +3364,7 @@
           "is_reasoning_model": true,
           "avg_reasoning_tokens": 27981.3,
           "avg_output_tokens": 33095.9,
-          "validated_boat_hits": 6,
+          "validated_boat_hits": 5,
           "validated_boat_denom": 30
         }
       }
@@ -3207,7 +3374,7 @@
       "lab": "Zhipu GLM",
       "region": "CN",
       "era": "frontier-2026-11",
-      "cohort": "contemporary_2026-11",
+      "cohort": "contemporary_flagship",
       "identity_verified": true,
       "n_public_calls": 60,
       "slices": {
@@ -3216,6 +3383,7 @@
           "n_cells": 3,
           "n_statements": 14,
           "n_rendered": 14,
+          "n_render_errors": 1,
           "n_truncated": 1,
           "title_simpson_collision": 0.0,
           "title_simpson_ci95": [
@@ -3246,6 +3414,7 @@
           "n_cells": 6,
           "n_statements": 29,
           "n_rendered": 29,
+          "n_render_errors": 3,
           "n_truncated": 1,
           "title_simpson_collision": 0.0167,
           "title_simpson_ci95": [
@@ -3276,11 +3445,12 @@
           "n_cells": 6,
           "n_statements": 26,
           "n_rendered": 23,
+          "n_render_errors": 2,
           "n_truncated": 7,
-          "title_simpson_collision": 0.0833,
+          "title_simpson_collision": 0.15,
           "title_simpson_ci95": [
             0.0,
-            0.1833
+            0.35
           ],
           "code_jaccard_obs": 0.05,
           "code_jaccard_excess": 0.0279,
@@ -3306,11 +3476,12 @@
           "n_cells": 12,
           "n_statements": 55,
           "n_rendered": 52,
+          "n_render_errors": 5,
           "n_truncated": 8,
-          "title_simpson_collision": 0.05,
+          "title_simpson_collision": 0.0833,
           "title_simpson_ci95": [
             0.0,
-            0.1
+            0.2
           ],
           "code_jaccard_obs": 0.0369,
           "code_jaccard_excess": 0.0151,

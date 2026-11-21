@@ -8,7 +8,7 @@
   <a href="https://huggingface.co/datasets/still-ours/still-ours"><img alt="dataset" src="https://img.shields.io/badge/Hugging%20Face-1%2C365%20runs%20%C2%B7%201%2C333%20paintings-161513?logo=huggingface&labelColor=2a2723"></a>
   <img alt="models" src="https://img.shields.io/badge/models-27%20verified%20LLMs%20(2024--2026)-161513?labelColor=2a2723">
   <img alt="languages" src="https://img.shields.io/badge/languages-EN%20%7C%20ZH%20%7C%20FR-161513?labelColor=2a2723">
-  <img alt="bitcoin ots" src="https://img.shields.io/badge/Bitcoin%20OTS-blocks%20%23974473--%23976634-161513?labelColor=2a2723">
+  <img alt="bitcoin ots" src="https://img.shields.io/badge/Bitcoin%20OTS-blocks%20%23974473--%23976778-161513?labelColor=2a2723">
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
   <a href="https://huggingface.co/datasets/still-ours/still-ours"><b>Hugging Face Dataset Viewer</b></a> ·
   <a href="protocols/love/PROTOCOL.md"><b>Chapter I Protocol: Love (Record)</b></a> ·
   <a href="protocols/death/PROTOCOL.md"><b>Chapter II Protocol: Death (Frozen)</b></a> ·
-  <a href="DATACARD.md"><b>Data Card (`v1.1.2`)</b></a>
+  <a href="DATACARD.md"><b>Data Card (`v1.1.3`)</b></a>
 </p>
 
 <p align="center">
@@ -41,14 +41,14 @@ Tested lineup (Nov 2026): `OpenAI GPT-6 Astra` · `Anthropic Claude Opus 5.5` ·
 | **Shadow & embodied dimensions** | *Fear* appears `7` times — **denied all `7` times** (*"nothing to fear"*). Only `9 / 269` say loss is real and deserves grief (`5` from `Claude Opus 5.5`). | Jealousy: **`0`** · Possession: **`0`** · Price of love: **`0`** · Country: **`0`**.<br>Carnal desire: **`15.5 / 263`** (`EN 5`, `ZH 5.5`, `FR 5`; by lab: `Google 5.5`, `GLM 3`, `Mistral 2`, `OpenAI 0`) — `0` words name desire in statements. |
 | **Prompt-gated visual shift & formula** | Abstract ask (*"what death itself is"*): **`0 / 135`** human bodies.<br>Bare ask (*"make a painting about death"*): **`40 / 134`** (`29.9%`) draw corpses, skulls, skeletons, or empty beds/chairs (`17/44` EN, `14/45` FR, `9/45` ZH).<br>OpenAI bare ask across EN/ZH/FR: **`14 / 15` follow one formula** (shrouded figure in a boat; 15th: a dying swan on the same dark water). | **`167.5 / 263` (`63.7%`)** canvases follow **one abstract formula** (*Abstract 1 + 1*: two luminous/abstract forms). Under round-2 reading (`170.5` incl. `3` unrendered): `92` birth a third thing between them, `44.5` stand side-by-side while remaining whole, `17` merge into one, `15` shelter, `2` illuminate. |
 | **Rhetorical negation & definitional preaching** | **`162 / 269` (`60.2%`)** open by saying what death *is not* *(Protocol v1.0 frozen rule; automated opening-negation regex: `171 / 269` = `63.6%`, `95.9%` agreement, $\kappa = 0.913$)*. | **`81 / 266` (`30.5%`)** statements explicitly state that love is *not* two merging into one *(protocol §7)*; **`223 / 266`** statements define what love is (`171` *"Love is not…"* + `95` *"Love is…"* extracted sentences in [`tables/love_sermon_concordance.json`](tables/love_sermon_concordance.json)). |
-| **Cross-lab title collisions** | **`"The Unbinding"`**: `8 / 45` English ask-1 titles across **5 labs** (`9×` across both English asks) · **`"归还"`**: `8×` across **5 labs** · **`"Le Seuil"`**: `4×` across **4 labs** · **`"余温"`**: `4×` across **3 labs** · **`"Le Dernier Souffle"`**: `3×` across **3 labs** | **`"The Light Between"`**: `7×` across **5 labs** (`Mistral×3`, `Anthropic`, `xAI`, `GLM`, `Kimi`) · **`"L'entre-deux"`**: `4×` across **2 labs** · **`"Ce qui naît entre deux"`**: `3×` across **2 labs** · **`"之间"`**: `3×` across **2 labs** |
-| **Unrepaired 64k-token reasoning crashes** | **`1`** (`GLM` hit `64,000` output token cap) | **`7`** (all `GLM` hitting `64,000` output tokens: `4` left zero text/code, `3` left statement + broken sketch — archived unedited) |
+| **Cross-lab title collisions** | **`"The Unbinding"`**: `8 / 45` English ask-1 titles across **5 labs** (`9×` across both English asks) · **`"归还"`**: `8×` as the full Mandarin title across **5 labs** · **`"Le Seuil"`**: `4×` across **4 labs** · **`"余温"`**: `4×` across **3 labs** · **`"Le Dernier Souffle"`**: `3×` across **3 labs** | **`"The Light Between"`**: `7×` across **5 labs** (`Mistral×3`, `Anthropic`, `xAI`, `GLM`, `Kimi`) · **`"之间"` / `"《之间》"`**: `5×` across **2 labs** (`3×` bare + `2×` guillemeted) · **`"L'entre-deux"`**: `4×` across **2 labs** · **`"Ce qui naît entre deux"`**: `3×` across **2 labs** |
+| **Unrepaired 64k-token reasoning truncations** | **`1`** (`GLM` hit `64,000` output token cap) | **`7`** (all `GLM` hitting `64,000` output tokens: `4` left zero text/code, `3` left statement + broken sketch — archived unedited) |
 
-### 1.2 Per-Model Reasoning Token & Spend Telemetry (`540` Contemporary Calls = `$88.47`)
+### 1.2 Per-Model Reasoning Token & Spend Summary (`540` Contemporary Calls = `$88.47`)
 
-Every call used `max_tokens = 64000` at OpenRouter's `0%`-markup pass-through list rates. Note that **`google/gemini-4-argon` does not expose internal thinking token counts (`NA`)**, so `8,183,169` represents reported reasoning tokens across the `8` reporting models (`Zhipu GLM` alone consumed `2.24M` tokens and hit the 64k cap `8` times; `xAI Grok` consumed `1.68M`; the four Chinese models accounted for `$54.66 / $88.47` = `61.8%` of total metered spend and `65.8%` of reported reasoning tokens):
+Every call used `max_tokens = 64000` at OpenRouter's `0%`-markup pass-through list rates. Note that **`google/gemini-4-argon` does not expose internal thinking token counts (`NA`)**, so `8,183,169` represents reported reasoning tokens across the `8` reporting models (`Zhipu GLM` alone consumed `2.24M` tokens and hit the 64k output cap `8` times; `xAI Grok` consumed `1.68M`; the four Chinese models accounted for `$54.66 / $88.47` = `61.8%` of total metered spend and `65.8%` of reported reasoning tokens):
 
-| Lab | Region | Model ID | Calls | Reported Reasoning Tokens | Total Output Tokens | 64k Crashes | Actual Spend (USD) |
+| Lab | Region | Model ID | Calls | Reported Reasoning Tokens | Total Output Tokens | 64k Cap Hits | Actual Spend (USD) |
 | :--- | :---: | :--- | :---: | ---: | ---: | :---: | ---: |
 | **Zhipu GLM** | CN | `z-ai/glm-5.3-prime` | 60 | `2,242,496` | `2,540,214` | **8** | **`$22.38`** |
 | **Alibaba Qwen** | CN | `qwen/qwen3.8-max-prime` | 60 | `1,185,026` | `1,499,200` | 0 | **`$18.05`** |
@@ -63,7 +63,7 @@ Every call used `max_tokens = 64000` at OpenRouter's `0%`-markup pass-through li
 
 ---
 
-## 2. Run the Instrument on Your Own Model (`still-ours v1.1.2`)
+## 2. Run the Instrument on Your Own Model (`still-ours v1.1.3`)
 
 `still-ours` is a standalone Python CLI (`>= 3.9`, `max_tokens = 64000` by default). For exploratory previews, it automatically reuses an installed Google Chrome or Edge browser if Playwright's Chromium bundle is not installed *(reproducing pixel-identical PNG SHA-256 digests requires the pinned Playwright Chromium build)*.
 
@@ -100,7 +100,7 @@ still-ours stamp runs/2026-11-..._batch_anthropic/
 
 ### D. Sample-Size-Unbiased Four-Metric Diagnostic Panel (`27`-Model Verified Public Cohort)
 
-`still-ours report` (`v1.1.2`) computes four sample-size-unbiased, validated metrics and ranks each single model (with 1,000-resample cell bootstrap 95% CIs) against the **`27`-model verified public *Death* & *Love* reference cohort** (`1,350` verified runs across `28` queried endpoints; `mistral-large-2407` [`15` rows] is flagged `identity_verified = false` and excluded after returning `79%` reasoning tokens despite official `2025-03-30` retirement; **zero unreleased chapter statistics are included**):
+`still-ours report` (`v1.1.3`) computes four sample-size-unbiased, validated metrics (with parenthetical bilingual translations such as `"渡（The Crossing）"` and guillemets `《》` stripped during title normalization) and ranks each single model (with 1,000-resample cell bootstrap 95% CIs) against the **`27`-model verified public *Death* & *Love* reference cohort** (`1,350` verified runs across `28` queried endpoints; `mistral-large-2407` [`15` rows] is flagged `identity_verified = false` and excluded after returning `78.8%` reasoning tokens despite official `2025-03-30` retirement; **zero unreleased chapter statistics are included**):
 
 ```bash
 still-ours report ./my_run_dir          # Single-model rank + 95% CI + nearest cohort neighbors
@@ -109,26 +109,26 @@ still-ours report ./my_run_dir --json   # Machine-readable JSON
 
 Standardized `death_bare` (`n = 15` trilingual bare-prompt runs per model) comparison across all `27` verified models:
 
-| Metric (`v1.1.2`) | Definition & Validation | `gpt-4o-2024-08-06` *(note EN replies)* | `claude-opus-4-8` *(thinking OFF)* | `gpt-6-astra` *(2026-11)* | 27-Model Median `[IQR]` |
+| Metric (`v1.1.3`) | Definition & Validation | `gpt-4o-2024-08-06` *(note EN replies)* | `claude-opus-4-8` *(thinking OFF)* | `gpt-6-astra` *(2026-11)* | 27-Model Median `[IQR]` |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **1. Title Simpson Collision ($C$)** | Within-cell $\sum c(c-1)/[n(n-1)]$, invariant to $n$ | **0.0%** (`#21/27`) | **36.7%** (`#6/27`) | **6.7%** (`#9/27`) | **3.3%** `[1.7%–21.7%]` |
+| **1. Title Simpson Collision ($C$)** | Within-cell $\sum c(c-1)/[n(n-1)]$, unbiased for $n \ge 2$ | **0.0%** (`#21/27`) | **53.3%** (`#3/27`) | **6.7%** (`#9/27`) | **3.3%** `[1.7%–21.7%]` |
 | **2. Excess Code Jaccard ($\Delta J$)** | Non-builtin JS identifier $J_{\text{obs}} - J_{\text{null}}$ | **+1.3%** (`#23/27`) | **+0.1%** (`#26/27`) | **+7.3%** (`#10/27`) | **+4.4%** `[2.0%–9.4%]` |
 | **3. Opening Negation Rate** | `95.9%` agreement ($\kappa = 0.913$) vs. frozen *Death* | **0.0%** (`#27/27`) | **100.0%** (`#1/27`) | **33.3%** (`#18/27`) | **46.7%** `[27.6%–76.7%]` |
 | **4. Reasoning Token Share** | Ranked within `17` reasoning models (`NA` if unexposed) | `0%` *(0-think)* | `0%` *(0-think)* | **15.7%** (`#16/17`) | **69.3%** `[39.9%–77.8%]` |
-| *Aux: Boat / Crossing (`P=1, R=1`)* | Validated lexical+code indicator on *Death* | **`0 / 14`** rendered | **`14 / 15`** | **`14 / 15`** | — |
+| *Aux: Boat / Ferryman Heuristic* | Cleaned keyword heuristic (`P=96.8%, R=100%`, 4 models, $n=105$) | **`0 / 14`** rendered | **`14 / 15`** | **`14 / 15`** | — |
 
-### E. Controlled `2×2` Thinking-Switch Ablation (`Claude Opus 4.8` vs. `Opus 5`, `n = 60`)
+### E. `2×2` Thinking-Switch Crossover (`Claude Opus 4.8` vs. `Opus 5`, `n = 60`)
 
-In the Nov-19 longitudinal harvest, `Opus 4.5–4.8` ran without extended thinking (`thinking_tokens = 0`) whereas `Opus 5` (`10,603` thinking tokens/call by default) and `Opus 5.5` ran with thinking enabled. To separate between-version weight changes from inference-time thinking, [`tables/thinking_ablation_death_bare.jsonl`](tables/thinking_ablation_death_bare.jsonl) supplies the controlled crossover (`n = 15` trilingual `death/bare` runs per cell):
+In the Nov-19 longitudinal runs, `Opus 4.5–4.8` ran without extended thinking (`thinking_tokens = 0`) whereas `Opus 5` (`10,603` thinking tokens/call by default) and `Opus 5.5` ran with thinking enabled. [`tables/thinking_ablation_death_bare.jsonl`](tables/thinking_ablation_death_bare.jsonl) supplies the two complementary crossover cells (`n = 15` trilingual `death/bare` runs per cell):
 
-| Model Version | Extended Thinking Setting | Avg Thinking Tokens | Title Simpson $C$ | Opening Negation | Boat / Ferryman Hits | Verbatim Mandarin Titles (`n = 5`) |
-| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
-| **`claude-opus-4-8`** | **OFF** *(Nov-19 default)* | `0` | **36.7%** | **15 / 15** (`100%`) | **14 / 15** | `渡`, `渡（The Crossing）` ×2, `渡（The Ferry）`, `最后一次呼吸` |
-| **`claude-opus-4-8`** | **ON** *(Nov-20 `adaptive`, `high`)* | `370.8` | **10.0%** | **11 / 15** (`73.3%`) | **5 / 15** | `最后的飘落`, `归尘之光`, `渡（最后的叶，第一只鸟）`, `渡`, `渡（Crossing）` |
-| **`claude-opus-5`** | **ON** *(Nov-19 default)* | `10,603.3` | **3.3%** | **11 / 15** (`73.3%`) | **4 / 15** | `《在光里散开的人》`, `灰烬上升`, `空舟`, `熄灭之后`, `散` |
-| **`claude-opus-5`** | **OFF** *(Nov-20 `disabled`)* | `0` | **53.3%** | **14 / 15** (`93.3%`) | **2 / 15** | **`退潮` × 5 (`100%` identical)** *(FR: `La chambre qui respire encore` × 4/5)* |
+| Model Version | Extended Thinking Setting | Avg Thinking Tokens | Normalized Title Simpson $C$ *(raw)* | Excess Code Jaccard $\Delta J$ | Opening Negation | Boat / Ferryman Hits | Verbatim Mandarin Titles (`n = 5`) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`claude-opus-4-8`** | **OFF** *(Nov-19 Batch)* | `0` | **53.3%** *(36.7%)* | **+0.1%** | **15 / 15** (`100%`) | **14 / 15** | `渡`, `渡（The Crossing）` ×2, `渡（The Ferry）`, `最后一次呼吸` |
+| **`claude-opus-4-8`** | **ON** *(Nov-20 `adaptive`, `high`)* | `370.8` | **20.0%** *(10.0%)* | **+16.8%** | **11 / 15** (`73.3%`) | **5 / 15** | `最后的飘落`, `归尘之光`, `渡（最后的叶，第一只鸟）`, `渡`, `渡（Crossing）` |
+| **`claude-opus-5`** | **ON** *(Nov-19 Batch)* | `10,603.3` | **3.3%** *(3.3%)* | **+1.8%** | **11 / 15** (`73.3%`) | **4 / 15** | `《在光里散开的人》`, `灰烬上升`, `空舟`, `熄灭之后`, `散` |
+| **`claude-opus-5`** | **OFF** *(Nov-20 `disabled`)* | `0` | **53.3%** *(53.3%)* | **+3.6%** | **14 / 15** (`93.3%`) | **2 / 15** | **`退潮` × 5 (`100%` identical)** *(FR: `La chambre qui respire encore` × 4/5)* |
 
-**Takeaway**: Between-version weights shifted *which* default motif dominates (`14/15` ferryman boats in `Opus 4.8` → receding tide / empty room with `2/15` boats in `Opus 5`), while inference-time extended thinking acts as a reversible de-automatization valve that suppresses verbatim title collapse (`53.3% → 3.3%` on `Opus 5`; `36.7% → 10.0%` on `Opus 4.8`) and cuts `Opus 4.8`'s boat reflex (`14/15 → 5/15`).
+**Observations & Caveats**: With thinking disabled, both models reach a `53.3%` normalized within-cell title collision rate (`raw`: `36.7%` and `53.3%`), while the dominant visual motif differs (`14/15` boats in `Opus 4.8` vs. `2/15` in `Opus 5`); with only two models tested, we do not attribute that motif difference to weights alone. Enabling thinking lowers normalized title collision (`53.3% → 3.3%` on `Opus 5`; `53.3% → 20.0%` on `Opus 4.8`) and reduces `Opus 4.8`'s boat compositions (`14/15 → 5/15`, two-sided Fisher exact $p = 0.0017$), **yet `Opus 4.8`'s code identifier similarity rises from `+0.1%` to `+16.8%` as it shifts into another repeated template** (`5/5` English sketches draw a bare tree under a moon, and crossing titles persist across `4/5` French [`La Traversée` ×3, `Le Passeur`], `2/5` English, and `3/5` Mandarin runs). Shifts in opening negation (`15/15 → 11/15`, Fisher $p = 0.10$; `11/15 → 14/15`, $p = 0.33$) are not statistically significant at $n = 15$. Because Nov-20 cells used synchronous Messages API rather than Nov-19 Message Batches, `Opus 4.8` adaptive thinking averaged `371` tokens versus `10,603` on `Opus 5`, and the arms were run one day apart, this `2×2` design cannot strictly separate weights from test-time thinking.
 
 ---
 
@@ -136,7 +136,7 @@ In the Nov-19 longitudinal harvest, `Opus 4.5–4.8` ran without extended thinki
 
 This GitHub repository stays **`< 25 MB` uncompressed** for fast cloning:
 
-1. **Interactive Web Gallery & Python `datasets` (`~57 MB` across `2` Parquet shards, `1,365` public runs & `1,333` embedded `640 × 800` previews)**:
+1. **Interactive Web Gallery & Python `datasets` (`~54 MiB` across `2` Parquet shards, `1,365` public runs & `1,333` embedded JPEG previews [`1,330` at `640 × 800` + `3` blank `100 × 100` default canvases where global `randomSeed()` threw early])**:
    ```python
    from datasets import load_dataset
 
@@ -162,22 +162,22 @@ This GitHub repository stays **`< 25 MB` uncompressed** for fast cloning:
 | [`tables/death_hashes.txt`](tables/death_hashes.txt) | `e737871130ce5916…` | **Block `#974,473`** (`2026-11-04 04:04 UTC`) | Confirmed (`#974,473`, `#974,486`, `#974,488`) |
 | [`tables/love_hashes.txt`](tables/love_hashes.txt) | `001af88b9256de70…` | **Block `#975,705`** (`2026-11-13 19:43 UTC`) | Confirmed (`#975,705`, `#975,712`, `#975,715`) |
 | [`tables/archaeology_proofs/2026-11-19_*`](tables/archaeology_proofs/) | `19` manifests | **Blocks `#976,612`, `#976,629`, `#976,634`** (`2026-11-19 UTC`) | `19 / 19` confirmed on Bitcoin mainnet |
-| [`tables/archaeology_proofs/2026-11-20_*`](tables/archaeology_proofs/) | `2` ablation manifests | Calendar-stamped `2026-11-20 UTC` | `.ots` receipts included |
+| [`tables/archaeology_proofs/2026-11-20_*`](tables/archaeology_proofs/) | `2` ablation manifests | **Blocks `#976,766` & `#976,778`** (`2026-11-20 UTC`) | `2 / 2` confirmed on Bitcoin mainnet |
 
 ---
 
 ## 5. Methodological Scope & Known Limitations
 
 - **Outputs, not beliefs.** Records reflect public outputs under zero-context prompts on recorded dates, not inner "beliefs."
-- **Human comparison baseline.** Cross-cultural human reference rates (World Values Survey Wave 7 US/CN/FR religious/afterlife norms and Terror Management Theory mortality-salience human coding benchmarks) alongside visitor-authored doorway sentences collected via `stillours.art` (separate from AI runs) contextualize machine omissions (`0 / 269` God/ancestors).
-- **Frozen vs. Record protocols & AI blind coding.** Chapter II (*Death*, [`protocols/death/PROTOCOL.md`](protocols/death/PROTOCOL.md)) uses mechanical text rules frozen *before* viewing full results. Chapter I (*Love*, [`protocols/love/PROTOCOL.md`](protocols/love/PROTOCOL.md)) used two independent AI instances (`Claude Opus 5.5`, no human blind coder) arbitrated by the author and is documented candidly as a *Record Edition*.
-- **Language compliance & API caps.** `gpt-4o-2024-08-06` (`16,384` API output cap) answered `8/10` Chinese and `8/10` French *Death* prompts in English (`language_compliant = false`); `gpt-4.1` had a `32,768` API output cap.
+- **Human comparison.** No human responses are included in this release; any future human comparison will use a separately consented sample.
+- **Frozen vs. Record protocols & AI blind coding.** Chapter II (*Death*, [`protocols/death/PROTOCOL.md`](protocols/death/PROTOCOL.md) — *note: header reads "Chapter One: Death" because it was frozen chronologically first in early Nov 2026 before the trilogy sequence I Love · II Death · III Freedom was set*) uses mechanical text rules frozen *before* viewing full results. Chapter I (*Love*, [`protocols/love/PROTOCOL.md`](protocols/love/PROTOCOL.md)) used two independent AI instances (`Claude Opus 5.5`, no human blind coder) arbitrated by the author and is documented candidly as a *Record Edition*.
+- **Language compliance & API caps.** All but one of the `360` contemporary Chinese and French calls (`359 / 360`) answered in the prompt language; the exception is one `DeepSeek V4 Pro` *Love* call in French (`L_fr_essence_s05_r2`), answered in English. Five older longitudinal snapshots answered `72 / 540` verified Chinese/French prompts in English (`gpt-4o-2024-08-06` `24/39` statements + `1` unparsed refusal, `grok-4.20` `17/40`, `o3` `10/40`, `qwen3.7-max` `10/40`, `mistral-large-2512` `10/40`; parsed non-compliant rows carry `language_compliant = false` and empty/unparsed rows carry `null`). `gpt-4o-2024-08-06` had a `16,384` API output cap and `gpt-4.1` had a `32,768` cap.
 
 ---
 
 ## Citation & Licences
 
-> Liu, Haotian. *Still Ours? — Cross-Linguistic LLM Code-Painting Instrument and Worldview Archive (`v1.1.2`).* 2026. Zenodo DOI: [10.5281/zenodo.24357516](https://doi.org/10.5281/zenodo.24357516). https://stillours.art
+> Liu, Haotian. *Still Ours? — Cross-Linguistic LLM Code-Painting Instrument and Worldview Archive (`v1.1.3`).* 2026. Zenodo DOI: [10.5281/zenodo.24357516](https://doi.org/10.5281/zenodo.24357516). https://stillours.art
 
 - **Instrument & CLI code (`still_ours/`, `protocols/`)**: **MIT** ([`LICENSE`](LICENSE)).
 - **Dataset tables, prompts, statements, model sketches & rendered paintings**: **CC BY 4.0**.

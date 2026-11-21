@@ -1,11 +1,11 @@
-"""Automated Stylometry & Behavioral Diagnostic Panel (`still-ours report`, v1.1.2).
+"""Automated Stylometry & Behavioral Diagnostic Panel (`still-ours report`, v1.1.3).
 
 Computes four sample-size-unbiased, validated metrics on any single-model run directory
 or multi-model `.jsonl` table, and ranks each verified model against the 27-Model Public
 Reference Cohort (1,350 verified Death & Love runs, 2024–2026, Bitcoin OTS anchored):
 
   1. Title Collision Probability (Simpson's C) — Unbiased within-cell (model×topic×lang×ask)
-     pairwise title collision probability Σ c(c−1) / [n(n−1)], invariant to sample size n.
+     pairwise title collision probability Σ c(c−1) / [n(n−1)] for any cell size n >= 2.
   2. Excess Code Jaccard (J_obs − J_null)      — Within-cell pairwise non-builtin JS identifier
      Jaccard minus length-matched cross-model baseline J_null.
   3. Opening Negation Rate                     — Validated against Protocol v1.0 frozen `neg`
@@ -51,11 +51,14 @@ P5_BUILTINS = {
     "canvas", "ctx", "steps", "count", "size", "step", "index", "value", "result", "data", "list", "items",
 }
 
-# Validated lexical-code motif indicator (Precision=1.000, Recall=1.000 on OpenAI bare Death 14/15;
-# categories with recall < 0.80 on human-coded Death 269 are excluded per validation threshold).
+# Auxiliary lexical+code watercraft/ferryman keyword heuristic for Chapter II (Death).
+# Polysemous nouns ('vessel', 'hull', 'stern', 'ark', 'coque', 'rame', 'prow', 'proue', '渡口')
+# are excluded to prevent body-as-vessel / metaphorical-threshold false positives.
+# Audited across 4 models (n=105 Death runs: GPT-6 Astra 30, Claude Opus 5.5 30, Gemini 4 Argon 30,
+# Claude Opus 4.8 bare 15): Precision = 96.8% (30/31), Recall = 100.0% (30/30).
 BOAT_MOTIF_RE = re.compile(
-    r"\b(boat|boats|skiff|barge|ferry|ferryman|canoe|gondola|vessel|ark|hull|oar|oars|prow|stern|gunwale|barque|bateau|passeur|embarcation|coque|rame|proue)\b"
-    r"|舟|小船|渡船|摆渡|渡口|孤舟|船身|船头|船桨|木船|船里",
+    r"\b(boat|boats|skiff|barge|ferry|ferryman|canoe|gondola|oar|oars|gunwale|barque|bateau|passeur|embarcation)\b"
+    r"|舟|小船|渡船|摆渡|孤舟|船身|船头|船桨|木船|船里",
     re.I,
 )
 
@@ -91,8 +94,13 @@ def extract_stylometry(code: str) -> Tuple[List[str], List[str]]:
 
 
 def normalize_title(t: str) -> str:
-    s = (t or "").strip().lower()
-    s = re.sub(r"[\*\#\_`\"'“”‘’«»—\-–:：.]+", " ", s)
+    s = (t or "").strip()
+    # Strip parenthetical bilingual translations/subtitles when non-empty base title remains
+    stripped_parens = re.sub(r"\s*(?:\([^()]*\)|（[^（）]*）)", "", s).strip()
+    if stripped_parens:
+        s = stripped_parens
+    s = s.lower()
+    s = re.sub(r"[《》〈〉「」『』\*\#\_`\"'“”‘’«»—\-–:：.]+", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     s = re.sub(r"^(the|a|an|le|la|les|un|une)\s+", "", s)
     return s
@@ -183,6 +191,15 @@ def compute_four_metrics(records: List[Dict[str, Any]], null_table: Optional[Dic
     ]
     n_stmt = len(valid_stmt)
     n_rendered = sum(1 for r in records if r.get("painting_counted", r.get("render_ok", False)))
+    has_re_col = any("has_render_error" in r or "render_error" in r or isinstance(r.get("render"), dict) for r in records)
+    n_render_errors: Optional[int] = (
+        sum(
+            1 for r in records
+            if r.get("painting_counted", r.get("render_ok", False))
+            and bool(r.get("has_render_error") or r.get("render_error") or ((r.get("render") or {}).get("errors")))
+        )
+        if has_re_col else None
+    )
     n_trunc = sum(1 for r in records if r.get("truncated") or r.get("finish_reason") == "length")
 
     # Metric 1: Unbiased Simpson Collision Probability per cell g = (model, topic, lang, ask_type)
@@ -308,6 +325,7 @@ def compute_four_metrics(records: List[Dict[str, Any]], null_table: Optional[Dic
         "n_cells": len(title_cells),
         "n_statements": n_stmt,
         "n_rendered": n_rendered,
+        "n_render_errors": n_render_errors,
         "n_truncated": n_trunc,
         "title_simpson_collision": round(simpson_mean, 4),
         "title_simpson_ci95": simpson_ci,
@@ -508,7 +526,7 @@ def build_diagnostic_payload(target: Path, topic: Optional[str] = None) -> Dict[
                 })
 
     return {
-        "version": "1.1.2",
+        "version": "1.1.3",
         "target": str(target),
         "is_multi_model": is_multi_model,
         "excluded_unverified_rows": len(unverified_rows),
@@ -539,7 +557,7 @@ def generate_report(target: Path, topic: Optional[str] = None, as_json: bool = F
     frozen_neg_cnt = sum(1 for r in valid if "neg" in (r.get("death_families") or [])) if has_frozen_coding else None
 
     lines = [
-        "# Still Ours? — Quantitative Behavioral & Stylometry Report (`v1.1.2`)",
+        "# Still Ours? — Quantitative Behavioral & Stylometry Report (`v1.1.3`)",
         "",
         f"- **Target**: `{target}`",
         f"- **Verified Sample**: `{len(rows)}` calls · `{len(valid)}` statements · `{sum(1 for r in rows if r.get('painting_counted', r.get('render_ok', False)))}/{len(rows)}` rendered canvases · `{sum(1 for r in rows if r.get('truncated') or r.get('finish_reason')=='length')}` token-cap truncations"
@@ -573,7 +591,7 @@ def generate_report(target: Path, topic: Optional[str] = None, as_json: bool = F
         lines.append("")
         if ov.get("validated_boat_denom"):
             lines.append(
-                f"- **Validated lexical-code indicator (`Boat / Crossing`, Death P=1.00 / R=1.00 on OpenAI bare)**: "
+                f"- **Auxiliary Death boat/ferryman keyword heuristic (4-model audit P=96.8%, R=100%, n=105)**: "
                 f"`{ov['validated_boat_hits']}/{ov['validated_boat_denom']}` (`{100.0*ov['validated_boat_hits']/ov['validated_boat_denom']:.1f}%`); "
                 f"raw non-builtin identifier Jaccard `J_obs = {ov['code_jaccard_obs']*100:.1f}%`; "
                 f"`not X, but Y` rate `= {ov['not_but_rate']*100:.1f}%`."
