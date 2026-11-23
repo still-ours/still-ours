@@ -13,9 +13,13 @@
 
 <p align="center">
   <a href="https://stillours.art"><b>Interactive Exhibition</b></a> ·
-  <a href="https://huggingface.co/datasets/still-ours/still-ours"><b>Hugging Face Dataset Viewer</b></a> ·
-  <a href="protocols/love/PROTOCOL.md"><b>Chapter I Protocol: Love (Record)</b></a> ·
-  <a href="protocols/death/PROTOCOL.md"><b>Chapter II Protocol: Death (Frozen)</b></a> ·
+  <a href="https://stillours.art/vault/"><b>Specimen Vault (27 Models)</b></a> ·
+  <a href="https://www.youtube.com/@StillOursArt"><b>YouTube Films (EN)</b></a> / <a href="https://www.youtube.com/@StillOursArt-fr"><b>(FR)</b></a> ·
+  <a href="https://huggingface.co/datasets/still-ours/still-ours"><b>Hugging Face Dataset</b></a> ·
+  <a href="https://osf.io/preprints/psyarxiv/n4hmd_v1"><b>PsyArXiv Preprint</b></a> ·
+  <a href="https://www.linkedin.com/in/zippoliu/"><b>Codex Vivus Monographs (LinkedIn)</b></a> ·
+  <a href="protocols/love/PROTOCOL.md"><b>Protocol: Love</b></a> ·
+  <a href="protocols/death/PROTOCOL.md"><b>Protocol: Death</b></a> ·
   <a href="DATACARD.md"><b>Data Card (`v1.1.3`)</b></a>
 </p>
 
