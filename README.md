@@ -14,7 +14,8 @@
 <p align="center">
   <a href="https://stillours.art"><b>Interactive Exhibition</b></a> ·
   <a href="https://stillours.art/vault/"><b>Specimen Vault (27 Models)</b></a> ·
-  <a href="https://www.youtube.com/@StillOursArt"><b>YouTube Films (EN)</b></a> / <a href="https://www.youtube.com/@StillOursArt-fr"><b>(FR)</b></a> ·
+  <a href="https://huggingface.co/spaces/still-ours/explorer"><b>HF Interactive Space</b></a> ·
+  <a href="https://www.youtube.com/@StillOursArt"><b>YouTube Films (EN)</b></a> / <a href="https://www.youtube.com/@StillOursFR"><b>(FR)</b></a> ·
   <a href="https://huggingface.co/datasets/still-ours/still-ours"><b>Hugging Face Dataset</b></a> ·
   <a href="https://osf.io/preprints/psyarxiv/n4hmd_v1"><b>PsyArXiv Preprint</b></a> ·
   <a href="https://www.linkedin.com/in/zippoliu/"><b>Codex Vivus Monographs (LinkedIn)</b></a> ·
@@ -64,6 +65,15 @@ Every call used `max_tokens = 64000` at OpenRouter's `0%`-markup pass-through li
 | **Mistral** | EU | `mistralai/mistral-large-4-0` | 60 | `733,871` | `919,837` | 0 | **`$1.94`** |
 | **Google** | US | `google/gemini-4-argon` | 60 | `NA` *(not reported)* | `246,688` | 0 | **`$1.25`** |
 | **Total** | — | **9 Frontier Models** | **540** | **`8,183,169`** *(8 reporting)* | **`10,383,885`** | **8** | **`$88.47`** |
+
+### 1.3 Longitudinal Visual Mode-Collapse Across Pinned Checkpoints (`2024–2026`, `27` Verified LLMs)
+
+<p align="center">
+  <img src="assets/longitudinal-openai-5x2.jpg" width="760" alt="GPT-4o (Rel. Aug 2024) 5 unrelated worlds vs GPT-6 Astra (Rel. Nov 2026) 14/15 identical shrouded boats">
+</p>
+
+- **OpenAI 8-Checkpoint Narrowing (`Aug 2024 – Nov 2026`, `119` usable bare-prompt sketches)**: Measured deterministically on `16 × 20` mean-centered RGB unit vectors (zero LLM-as-a-judge; subtracting scalar mean brightness cuts spurious dark-sky similarity across models from `0.54` down to `0.14`), within-model diversity dropped from `VisDiv = 0.97` (`gpt-4o-2024-08-06`, `0/14` boats) to `VisDiv = 0.48` (`gpt-6-astra`, `14/15` shrouded boats across English, French, and Mandarin; Spearman $r_s = -0.75, p = 0.031$; $r_s = -0.85$ excluding blank renders).
+- **Anthropic 7-Checkpoint Narrowing & Prompt-Language Escape Hatch (`Sep 2025 – Nov 2026`, `104` usable sketches)**: Overall 3-language diversity fell sharply ($r_s = -0.82, p = 0.023$), shifting icons from lantern ferrymen in `claude-opus-4-8` (`14/15`) to `5/5` identical twilight dandelions in `claude-opus-5.5` English (`EN VisDiv = 0.37`) — **yet translating the exact same prompt into Mandarin Chinese broke the reflex (`0/5` dandelions, `ZH VisDiv = 0.73`)**, demonstrating why English-only evaluations mismeasure cultural/visual lock-in.
 
 ---
 
